@@ -5039,3 +5039,174 @@ a {
     transform: none;
     background: #77736b;
 }
+
+/* =========================================================
+   FINAL HERO FIX — DESKTOP
+========================================================= */
+
+.hero-image img {
+    object-fit: cover;
+    object-position: center center;
+    animation: heroZoomDesktop 14s ease-out forwards;
+}
+
+@keyframes heroZoomDesktop {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   HERO BUTTON — DESKTOP
+========================================================= */
+
+.hero-buttons .gold-btn {
+    min-height: 50px;
+    height: 50px;
+    padding: 0 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    font-size: 13px;
+    border-radius: 14px;
+}
+
+
+/* =========================================================
+   HERO — MOBILE
+   نحافظ على شكل الجوال الحالي
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-image img {
+        object-position: center center;
+        animation: heroZoomMobile 14s ease-out forwards;
+    }
+
+    @keyframes heroZoomMobile {
+
+        from {
+            transform: scale(1.08);
+        }
+
+        to {
+            transform: scale(1);
+        }
+
+    }
+
+    .hero-buttons .gold-btn {
+        height: 48px;
+        min-height: 48px;
+        padding: 0 20px;
+        gap: 11px;
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        height: 76px;
+        top: 34px;
+    }
+
+    .header-inner {
+        width: 90%;
+    }
+
+    /* إخفاء القائمة الرئيسية */
+    .main-nav {
+        display: none;
+    }
+
+    /* إظهار زر القائمة */
+    .menu-btn {
+        display: block;
+    }
+
+    /* إظهار البحث */
+    .search-btn {
+        display: grid;
+    }
+
+    .header-side {
+        gap: 8px;
+    }
+
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .logo-arabic {
+        font-size: 31px;
+    }
+
+    .logo-english {
+        margin-top: 5px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header-inner {
+        width: 92%;
+    }
+
+    .right-side {
+        gap: 4px;
+    }
+
+    .left-side {
+        gap: 4px;
+    }
+
+    .search-btn,
+    .icon-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .menu-btn {
+        width: 29px;
+    }
+
+    .logo-arabic {
+        font-size: 29px;
+    }
+
+    .logo-english {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
+
+}
+
