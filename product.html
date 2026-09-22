@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>عودانا | تفاصيل المنتج</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =========================================================
+           OUDANA — PRODUCT PAGE
+        ========================================================= */
+
+        .product-page {
+            min-height: 100vh;
+            padding: 140px 6% 80px;
+            background: var(--cream);
+        }
+
+
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .product-gallery {
+            width: 100%;
+        }
+
+
+        .product-main-image {
+            width: 100%;
+            aspect-ratio: 1 / 1.05;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            background: var(--cream-dark);
+        }
+
+
+        .product-main-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        .product-category {
+            margin-bottom: 12px;
+
+            font-size: 13px;
+            letter-spacing: 1.5px;
+
+            color: var(--gold);
+        }
+
+
+        .product-details h1 {
+            margin: 0 0 18px;
+
+            font-family: var(--arabic-display);
+            font-size: clamp(38px, 5vw, 62px);
+
+            font-weight: 400;
+
+            color: var(--emerald);
+        }
+
+
+        .product-description {
+            max-width: 520px;
+
+            margin: 0 0 25px;
+
+            font-family: var(--arabic);
+            font-size: 16px;
+            line-height: 2;
+
+            color: var(--muted);
+        }
+
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 20px;
+
+            color: var(--gold);
+        }
+
+
+        .product-rating span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        .product-price {
+            margin-bottom: 30px;
+
+            font-family: var(--arabic);
+            font-size: 26px;
+            font-weight: 600;
+
+            color: var(--emerald);
+        }
+
+
+        /* =========================
+           QUANTITY
+        ========================= */
+
+        .quantity-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: fit-content;
+            height: 48px;
+
+            margin-bottom: 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            background: white;
+        }
+
+
+        .quantity-btn {
+            width: 44px;
+            height: 48px;
+
+            flex: 0 0 44px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--emerald);
+
+            font-size: 18px;
+
+            cursor: pointer;
+        }
+
+
+        .quantity-btn:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+        }
+
+
+        .quantity-value {
+            min-width: 42px;
+
+            text-align: center;
+
+            font-family: var(--arabic);
+
+            font-size: 15px;
+
+            color: var(--text);
+        }
+
+
+        /* =========================
+           ADD TO CART
+        ========================= */
+
+        .add-to-cart-btn {
+            width: 100%;
+            max-width: 420px;
+
+            min-height: 55px;
+
+            border: 0;
+            border-radius: 12px;
+
+            background: var(--emerald);
+
+            color: white;
+
+            font-family: var(--arabic);
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: .22s ease;
+        }
+
+
+        .add-to-cart-btn:hover {
+            background: var(--emerald-dark);
+            transform: translateY(-2px);
+        }
+
+
+        .add-to-cart-btn:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+
+        /* =========================
+           NOTIFICATION MESSAGE
+        ========================= */
+
+        .stock-notification-message {
+            width: 100%;
+            max-width: 420px;
+
+            margin-top: 12px;
+
+            padding: 13px 16px;
+
+            border-radius: 12px;
+
+            background: rgba(201, 161, 90, 0.12);
+
+            border: 1px solid rgba(201, 161, 90, 0.35);
+
+            color: var(--emerald);
+
+            font-family: var(--arabic);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            text-align: center;
+
+            display: none;
+        }
+
+
+        .stock-notification-message.show {
+            display: block;
+        }
+
+
+        /* =========================
+           LOADING
+        ========================= */
+
+        .product-loading {
+            min-height: 60vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: var(--arabic);
+            color: var(--muted);
+        }
+
+
+        .product-error {
+            min-height: 60vh;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            font-family: var(--arabic);
+        }
+
+
+        .product-error i {
+            margin-bottom: 15px;
+
+            font-size: 40px;
+            color: var(--gold);
+        }
+
+
+        .product-error h2 {
+            margin-bottom: 10px;
+            color: var(--emerald);
+        }
+
+
+        .product-error p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           OUT OF STOCK
+        ========================= */
+
+        .product-container.out-of-stock .product-main-image img {
+            filter: grayscale(55%);
+            opacity: 0.58;
+        }
+
+
+        .product-container.out-of-stock .product-details {
+            opacity: 0.72;
+        }
+
+
+        .product-container.out-of-stock .add-to-cart-btn {
+            background: #77736b;
+            color: #fff;
+            cursor: pointer;
+            opacity: 0.85;
+        }
+
+
+        .product-container.out-of-stock .add-to-cart-btn:hover {
+            background: #77736b;
+            transform: none;
+        }
+
+
+        .product-container.out-of-stock .quantity-wrapper {
+            opacity: 0.55;
+        }
+
+
+        .product-container.out-of-stock .quantity-btn {
+            cursor: not-allowed;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .product-page {
+                padding: 110px 20px 50px;
+            }
+
+
+            .product-container {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .product-details {
+                align-items: stretch;
+            }
+
+
+            .product-details h1 {
+                font-size: 42px;
+            }
+
+
+            .product-description {
+                font-size: 15px;
+            }
+
+
+            .add-to-cart-btn {
+                max-width: none;
+            }
+
+
+            .stock-notification-message {
+                max-width: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+
+        <!-- الجهة اليمنى -->
+
+        <div class="header-side right-side">
+
+            <button
+                class="icon-btn search-btn"
+                id="searchBtn"
+                aria-label="بحث"
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <a
+                href="login.html"
+                class="icon-btn"
+                id="accountBtn"
+                aria-label="حسابي"
+            >
+
+                <i class="fa-regular fa-user"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- الشعار -->
+
+        <a
+            href="index.html"
+            class="logo"
+            aria-label="عودانا"
+        >
+
+            <span class="logo-arabic">
+                عودانا
+            </span>
+
+            <span class="logo-english">
+                OUDANA
+            </span>
+
+        </a>
+
+
+        <!-- القائمة -->
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="menu.html">
+                المتجر
+            </a>
+
+            <a href="index.html#collections">
+                المجموعات
+            </a>
+
+            <a href="index.html#story">
+                قصتنا
+            </a>
+
+            <a href="index.html#contact">
+                تواصل معنا
+            </a>
+
+        </nav>
+
+
+        <!-- الجهة اليسرى -->
+
+        <div class="header-side left-side">
+
+            <button
+                class="icon-btn cart-btn"
+                id="cartBtn"
+                aria-label="السلة"
+            >
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                class="menu-btn"
+                id="mobileMenuBtn"
+                aria-label="فتح القائمة"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     CART
+===================================================== -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+>
+</div>
+
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+>
+
+    <div class="cart-header">
+
+        <h2>
+            سلة مشترياتك
+        </h2>
+
+        <button
+            class="cart-close"
+            id="cartClose"
+            aria-label="إغلاق"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-content"
+        id="cartContent"
+    >
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     PRODUCT
+===================================================== -->
+
+<main class="product-page">
+
+
+    <!-- Loading -->
+
+    <div
+        class="product-loading"
+        id="productLoading"
+    >
+
+        جاري تحميل المنتج...
+
+    </div>
+
+
+    <!-- Product -->
+
+    <div
+        class="product-container"
+        id="productContainer"
+        hidden
+    >
+
+
+        <!-- Gallery -->
+
+        <section class="product-gallery">
+
+            <div class="product-main-image">
+
+                <img
+                    id="productImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- Details -->
+
+        <section class="product-details">
+
+
+            <span
+                class="product-category"
+                id="productCategory"
+            >
+            </span>
+
+
+            <h1 id="productName">
+            </h1>
+
+
+            <div
+                class="product-rating"
+                id="productRating"
+            >
+            </div>
+
+
+            <p
+                class="product-description"
+                id="productDescription"
+            >
+            </p>
+
+
+            <div
+                class="product-price"
+                id="productPrice"
+            >
+            </div>
+
+
+            <!-- Quantity -->
+
+            <div class="quantity-wrapper">
+
+                <button
+                    type="button"
+                    class="quantity-btn"
+                    id="decreaseQuantity"
+                    aria-label="تقليل الكمية"
+                >
+                    −
+                </button>
+
+
+                <span
+                    class="quantity-value"
+                    id="quantityValue"
+                >
+                    1
+                </span>
+
+
+                <button
+                    type="button"
+                    class="quantity-btn"
+                    id="increaseQuantity"
+                    aria-label="زيادة الكمية"
+                >
+                    +
+                </button>
+
+            </div>
+
+
+            <!-- Add / Notify -->
+
+            <button
+                type="button"
+                class="add-to-cart-btn"
+                id="addToCartBtn"
+            >
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                إضافة إلى السلة
+
+            </button>
+
+
+            <!-- Notification message -->
+
+            <div
+                class="stock-notification-message"
+                id="stockNotificationMessage"
+            >
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+    <!-- Error -->
+
+    <div
+        class="product-error"
+        id="productError"
+        hidden
+    >
+
+        <i class="fa-regular fa-circle-xmark"></i>
+
+        <h2>
+            المنتج غير موجود
+        </h2>
+
+        <p>
+            يبدو أن المنتج المطلوب غير متوفر حاليًا.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+<!-- =====================================================
+     GLOBAL SCRIPTS
+===================================================== -->
+
+<script src="settings.js"></script>
+<script src="auth.js"></script>
+<script src="cart.js"></script>
+
+
+<script>
+
+    /* =========================================================
+       SUPABASE
+    ========================================================= */
+
+    const SUPABASE_URL =
+        "https://gpncttjpcucnbaatwjoy.supabase.co";
+
+   const SUPABASE_KEY =
+    "sb_publishable_emYCVcv_b9gLa62n3D1pPg_lI5xRnD4";
+
+    const supabaseClient =
+        supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const productLoading =
+        document.getElementById("productLoading");
+
+
+    const productContainer =
+        document.getElementById("productContainer");
+
+
+    const productError =
+        document.getElementById("productError");
+
+
+    const productImage =
+        document.getElementById("productImage");
+
+
+    const productName =
+        document.getElementById("productName");
+
+
+    const productCategory =
+        document.getElementById("productCategory");
+
+
+    const productDescription =
+        document.getElementById("productDescription");
+
+
+    const productPrice =
+        document.getElementById("productPrice");
+
+
+    const productRating =
+        document.getElementById("productRating");
+
+
+    const quantityValue =
+        document.getElementById("quantityValue");
+
+
+    const decreaseQuantity =
+        document.getElementById("decreaseQuantity");
+
+
+    const increaseQuantity =
+        document.getElementById("increaseQuantity");
+
+
+    const addToCartBtn =
+        document.getElementById("addToCartBtn");
+
+
+    const stockNotificationMessage =
+        document.getElementById(
+            "stockNotificationMessage"
+        );
+
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    let quantity = 1;
+
+    let currentProduct = null;
+
+    let productStock = 0;
+
+
+    /* =========================================================
+       PRODUCT ID
+    ========================================================= */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const productId =
+        params.get("id");
+
+
+    /* =========================================================
+       LOAD PRODUCT
+    ========================================================= */
+async function loadProduct() {
+
+    if (!productId) {
+
+        showProductError();
+
+        return;
+    }
+
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("products")
+        .select(`
+            id,
+            name,
+            description,
+            category,
+            price,
+            image_url,
+            rating,
+            sales_count,
+            stock_quantity,
+            is_available
+        `)
+        .eq("id", productId)
+        .single();
+
+
+    if (error || !data) {
+
+        console.error(
+            "Product error:",
+            error
+        );
+
+        showProductError();
+
+        return;
+    }
+
+
+    /*
+     * إذا المنتج مخفي من المتجر
+     * نعتبره غير موجود للعميل.
+     */
+
+    if (data.is_available === false) {
+
+        showProductError();
+
+        return;
+    }
+
+
+    currentProduct = data;
+
+
+    renderProduct(data);
+
+
+    /*
+     * إذا المخزون صفر
+     * نتأكد هل العميل مسجل مسبقًا
+     * في قائمة التنبيه.
+     */
+
+    if (Number(data.stock_quantity || 0) <= 0) {
+
+        await checkExistingStockNotification();
+
+    }
+
+}
+
+
+    /* =========================================================
+       RENDER PRODUCT
+    ========================================================= */
+
+    function renderProduct(product) {
+
+        productLoading.hidden = true;
+
+        productContainer.hidden = false;
+
+
+        productStock =
+            Number(product.stock_quantity || 0);
+
+
+        quantity =
+            productStock > 0
+                ? 1
+                : 0;
+
+
+        quantityValue.textContent =
+            quantity;
+
+
+        productName.textContent =
+            product.name || "منتج عودانا";
+
+
+        productCategory.textContent =
+            product.category || "";
+
+
+        productDescription.textContent =
+            product.description ||
+            "لا يوجد وصف لهذا المنتج حاليًا.";
+
+
+        productPrice.textContent =
+            `${Number(product.price || 0).toLocaleString("ar-SA")} ر.س`;
+
+
+        productImage.src =
+            product.image_url || "";
+
+
+        productImage.alt =
+            product.name || "منتج عودانا";
+
+
+        /* =====================================================
+           OUT OF STOCK
+        ===================================================== */
+
+        if (productStock <= 0) {
+
+            productContainer.classList.add(
+                "out-of-stock"
+            );
+
+
+            quantityValue.textContent =
+                "0";
+
+
+            decreaseQuantity.disabled =
+                true;
+
+
+            increaseQuantity.disabled =
+                true;
+
+
+            addToCartBtn.disabled =
+                false;
+
+
+            addToCartBtn.innerHTML = `
+                <i class="fa-regular fa-bell"></i>
+                أبلغيني عند توفره
+            `;
+
+
+        }
+
+
+        /* =====================================================
+           IN STOCK
+        ===================================================== */
+
+        else {
+
+            productContainer.classList.remove(
+                "out-of-stock"
+            );
+
+
+            decreaseQuantity.disabled =
+                true;
+
+
+            increaseQuantity.disabled =
+                productStock <= 1;
+
+
+            addToCartBtn.disabled =
+                false;
+
+
+            addToCartBtn.innerHTML = `
+                <i class="fa-solid fa-bag-shopping"></i>
+                إضافة إلى السلة
+            `;
+
+        }
+
+
+        /* =====================================================
+           RATING
+        ===================================================== */
+
+        const rating =
+            Number(product.rating || 0);
+
+
+        productRating.innerHTML =
+            `
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    ${rating.toFixed(1)}
+                </span>
+            `;
+
+
+        document.title =
+            `عودانا | ${product.name}`;
+
+    }
+
+
+    /* =========================================================
+       ERROR
+    ========================================================= */
+
+    function showProductError() {
+
+        productLoading.hidden = true;
+
+        productContainer.hidden = true;
+
+        productError.hidden = false;
+
+    }
+
+
+    /* =========================================================
+       QUANTITY — DECREASE
+    ========================================================= */
+
+    decreaseQuantity.addEventListener(
+        "click",
+        () => {
+
+            if (!currentProduct) {
+                return;
+            }
+
+
+            if (productStock <= 0) {
+                return;
+            }
+
+
+            if (quantity <= 1) {
+                return;
+            }
+
+
+            quantity--;
+
+
+            quantityValue.textContent =
+                quantity;
+
+
+            decreaseQuantity.disabled =
+                quantity <= 1;
+
+
+            increaseQuantity.disabled =
+                quantity >= productStock;
+
+        }
+    );
+
+
+    /* =========================================================
+       QUANTITY — INCREASE
+    ========================================================= */
+
+    increaseQuantity.addEventListener(
+        "click",
+        () => {
+
+            if (!currentProduct) {
+                return;
+            }
+
+
+            if (productStock <= 0) {
+                return;
+            }
+
+
+            if (quantity >= productStock) {
+
+                alert(
+                    `الكمية المتوفرة من هذا المنتج هي ${productStock} فقط.`
+                );
+
+                return;
+            }
+
+
+            quantity++;
+
+
+            quantityValue.textContent =
+                quantity;
+
+
+            decreaseQuantity.disabled =
+                quantity <= 1;
+
+
+            increaseQuantity.disabled =
+                quantity >= productStock;
+
+        }
+    );
+
+
+    /* =========================================================
+       CHECK EXISTING NOTIFICATION
+    ========================================================= */
+
+    async function checkExistingStockNotification() {
+
+        /*
+         * نحاول الحصول على المستخدم الحالي.
+         */
+
+        const {
+            data: {
+                user
+            }
+        } = await supabaseClient.auth.getUser();
+
+
+        /*
+         * إذا لم يكن مسجل دخول
+         * لا نحتاج نفحص قاعدة البيانات.
+         */
+
+        if (!user) {
+            return;
+        }
+
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("stock_notifications")
+            .select("id")
+            .eq("user_id", user.id)
+            .eq("product_id", productId)
+            .is("notified_at", null)
+            .maybeSingle();
+
+
+        if (error) {
+
+            console.error(
+                "Notification check error:",
+                error
+            );
+
+            return;
+        }
+
+
+        if (data) {
+
+            showNotificationMessage(
+                "تم تسجيل طلب التنبيه لهذا المنتج. سنرسل لكِ رسالة عند توفره."
+            );
+
+
+            addToCartBtn.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                تم تسجيل التنبيه
+            `;
+
+        }
+
+    }
+
+
+    /* =========================================================
+       SHOW NOTIFICATION MESSAGE
+    ========================================================= */
+
+    function showNotificationMessage(message) {
+
+        stockNotificationMessage.textContent =
+            message;
+
+
+        stockNotificationMessage.classList.add(
+            "show"
+        );
+
+    }
+
+
+    /* =========================================================
+       HIDE NOTIFICATION MESSAGE
+    ========================================================= */
+
+    function hideNotificationMessage() {
+
+        stockNotificationMessage.textContent =
+            "";
+
+
+        stockNotificationMessage.classList.remove(
+            "show"
+        );
+
+    }
+
+
+    /* =========================================================
+       REQUEST STOCK NOTIFICATION
+    ========================================================= */
+
+    async function requestStockNotification() {
+
+        /*
+         * نحصل على المستخدم المسجل دخول.
+         */
+
+        const {
+            data: {
+                user
+            },
+            error: userError
+        } = await supabaseClient.auth.getUser();
+
+
+        if (userError) {
+
+            console.error(
+                "Auth error:",
+                userError
+            );
+
+            alert(
+                "حدث خطأ أثناء التحقق من الحساب."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * لازم يكون المستخدم مسجل دخول
+         * حتى نعرف حسابه وإيميله.
+         */
+
+        if (!user) {
+
+            const shouldLogin =
+                confirm(
+                    "يجب تسجيل الدخول حتى نتمكن من إرسال إشعار توفر المنتج إلى بريدك الإلكتروني.\n\nهل تريدين الانتقال إلى صفحة تسجيل الدخول؟"
+                );
+
+
+            if (shouldLogin) {
+
+                window.location.href =
+                    `login.html?redirect=${encodeURIComponent(window.location.href)}`;
+
+            }
+
+
+            return;
+        }
+
+
+        /*
+         * نتأكد أن المنتج ما زال غير متوفر.
+         */
+
+        if (!currentProduct) {
+            return;
+        }
+
+
+        if (productStock > 0) {
+
+            alert(
+                "هذا المنتج متوفر الآن ويمكنك إضافته إلى السلة."
+            );
+
+            return;
+        }
+
+
+        /*
+         * نحصل على الإيميل من حساب Supabase.
+         */
+
+        const email =
+            user.email;
+
+
+        if (!email) {
+
+            alert(
+                "لم نتمكن من العثور على البريد الإلكتروني المرتبط بحسابك."
+            );
+
+            return;
+        }
+
+
+        /*
+         * نتأكد أولًا أن الطلب غير موجود.
+         */
+
+        const {
+            data: existingNotification,
+            error: existingError
+        } = await supabaseClient
+            .from("stock_notifications")
+            .select("id, notified_at")
+            .eq("user_id", user.id)
+            .eq("product_id", productId)
+            .is("notified_at", null)
+            .maybeSingle();
+
+
+        if (existingError) {
+
+            console.error(
+                "Existing notification error:",
+                existingError
+            );
+
+            alert(
+                "حدث خطأ أثناء التحقق من طلب التنبيه."
+            );
+
+            return;
+        }
+
+
+        /*
+         * إذا كان مسجل مسبقًا.
+         */
+
+        if (existingNotification) {
+
+            showNotificationMessage(
+                "تم تسجيل طلب التنبيه لهذا المنتج مسبقًا. سنرسل لكِ رسالة عند توفره."
+            );
+
+
+            addToCartBtn.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                تم تسجيل التنبيه
+            `;
+
+
+            return;
+        }
+
+
+        /*
+         * تسجيل طلب التنبيه.
+         */
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("stock_notifications")
+            .insert({
+                user_id: user.id,
+                product_id: productId,
+                email: email
+            })
+            .select()
+            .single();
+
+
+        if (error) {
+
+            console.error(
+                "Stock notification insert error:",
+                error
+            );
+
+
+            alert(
+                "حدث خطأ أثناء تسجيل التنبيه. حاولي مرة أخرى."
+            );
+
+
+            return;
+        }
+
+
+        console.log(
+            "Stock notification created:",
+            data
+        );
+
+
+        /*
+         * نجاح التسجيل.
+         */
+
+        showNotificationMessage(
+            "تم تسجيل طلب التنبيه ✓ سنرسل لكِ رسالة على بريدك الإلكتروني بمجرد توفر المنتج."
+        );
+
+
+        addToCartBtn.innerHTML = `
+            <i class="fa-solid fa-check"></i>
+            تم تسجيل التنبيه
+        `;
+
+    }
+
+
+    /* =========================================================
+       CART / NOTIFICATION BUTTON
+    ========================================================= */
+
+    addToCartBtn.addEventListener(
+        "click",
+        async () => {
+
+            if (!currentProduct) {
+                return;
+            }
+
+
+            /*
+             * إذا المنتج غير متوفر
+             * فالزر يصبح زر تنبيه.
+             */
+
+            if (productStock <= 0) {
+
+                await requestStockNotification();
+
+                return;
+            }
+
+
+            /*
+             * إذا المنتج متوفر
+             * نكمل إضافة المنتج للسلة.
+             */
+
+            if (quantity <= 0) {
+
+                quantity = 1;
+
+                quantityValue.textContent =
+                    quantity;
+
+            }
+
+
+            if (quantity > productStock) {
+
+                alert(
+                    `الكمية المتوفرة من هذا المنتج هي ${productStock} فقط.`
+                );
+
+                return;
+            }
+
+
+            /*
+             * البحث عن المنتج الموجود مسبقًا
+             * داخل السلة.
+             */
+
+            const existingItem =
+                typeof sharedCart !== "undefined"
+                    ? sharedCart.find(
+                        item =>
+                            String(item.id) ===
+                            String(currentProduct.id)
+                    )
+                    : null;
+
+
+            const existingQuantity =
+                existingItem
+                    ? Number(
+                        existingItem.quantity || 0
+                    )
+                    : 0;
+
+
+            /*
+             * التأكد أن الكمية الكلية
+             * لا تتجاوز المخزون.
+             */
+
+            if (
+                existingQuantity + quantity >
+                productStock
+            ) {
+
+                const remaining =
+                    productStock -
+                    existingQuantity;
+
+
+                if (remaining <= 0) {
+
+                    alert(
+                        "لقد أضفتِ كامل الكمية المتوفرة من هذا المنتج إلى السلة."
+                    );
+
+                } else {
+
+                    alert(
+                        `المتبقي من هذا المنتج ${remaining} فقط.`
+                    );
+
+                }
+
+
+                return;
+            }
+
+
+            /*
+             * إضافة المنتج للسلة.
+             */
+
+            if (
+                typeof addProductToSharedCart ===
+                "function"
+            ) {
+
+                addProductToSharedCart(
+                    currentProduct,
+                    quantity
+                );
+
+            } else {
+
+                console.error(
+                    "addProductToSharedCart is not defined."
+                );
+
+                alert(
+                    "حدث خطأ أثناء إضافة المنتج إلى السلة."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * رسالة نجاح.
+             */
+
+            addToCartBtn.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                تمت الإضافة إلى السلة
+            `;
+
+
+            setTimeout(
+                () => {
+
+                    if (productStock > 0) {
+
+                        addToCartBtn.innerHTML = `
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            إضافة إلى السلة
+                        `;
+
+                    }
+
+                },
+                1800
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
+
+    const header =
+        document.getElementById("header");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (window.scrollY > 80) {
+
+                header.classList.add(
+                    "scrolled"
+                );
+
+            } else {
+
+                header.classList.remove(
+                    "scrolled"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       START
+    ========================================================= */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        loadProduct
+    );
+
+</script>
+
+
+</body>
+
+</html>

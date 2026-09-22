@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>عودانا | لوحة التحكم</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<header class="topbar">
+
+    <div class="topbar-right">
+
+        <button
+            class="menu-trigger"
+            id="openMenu"
+            aria-label="فتح القائمة"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="brand-small">
+            عودانا | OUDANA
+        </div>
+
+    </div>
+
+
+    <div class="demo-badge">
+        لوحة التحكم والإدارة
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+
+    <!-- =====================================================
+         DASHBOARD PAGE
+    ===================================================== -->
+
+    <section class="admin-inner-page" id="dashboardPage">
+
+
+        <!-- INTRO -->
+
+        <section class="page-intro">
+
+            <h1>
+                مرحبًا بك في لوحة تحكم عودانا
+            </h1>
+
+            <p>
+                من هنا يمكنك متابعة أداء المتجر وإدارة المنتجات والطلبات والعملاء بكل سهولة.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STATISTICS
+        ===================================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- SALES -->
+
+            <article class="stat-card">
+
+                <div class="stat-top">
+
+                    <div>
+
+                        <div class="stat-title">
+                            إجمالي المبيعات
+                        </div>
+
+                        <div class="stat-value" id="dashboardTotalSales">
+    0
+    <span class="currency">
+        ر.س
+    </span>
+</div>
+
+                    </div>
+
+
+                    <div class="stat-icon">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+
+                </div>
+
+
+                
+
+            </article>
+
+
+
+            <!-- ORDERS -->
+
+            <article class="stat-card">
+
+                <div class="stat-top">
+
+                    <div>
+
+                        <div class="stat-title">
+                            الطلبات
+                        </div>
+
+                        <div class="stat-value" id="dashboardOrdersCount">
+    0
+</div>
+
+                    </div>
+
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                </div>
+
+
+
+            </article>
+
+
+
+            <!-- PRODUCTS -->
+
+            <article class="stat-card">
+
+                <div class="stat-top">
+
+                    <div>
+
+                        <div class="stat-title">
+                            المنتجات
+                        </div>
+
+                        <div class="stat-value" id="dashboardProductsCount">
+   0
+</div>
+
+                    </div>
+
+
+                    <div class="stat-icon">
+                        <i class="fa-regular fa-cube"></i>
+                    </div>
+
+                </div>
+
+
+                
+
+            </article>
+
+
+
+            <!-- CUSTOMERS -->
+
+            <article class="stat-card">
+
+                <div class="stat-top">
+
+                    <div>
+
+                        <div class="stat-title">
+                            العملاء
+                        </div>
+<div class="stat-value" id="dashboardCustomersCount">
+   0
+</div>
+
+                    </div>
+
+
+                    <div class="stat-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                </div>
+
+
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LATEST ORDERS
+        ===================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-head">
+
+                <h2>
+                    آخر الطلبات
+                </h2>
+
+                <a href="#" class="section-link">
+                    عرض الكل
+                </a>
+
+            </div>
+
+
+            <div class="orders-card">
+
+                <div class="orders-scroll">
+
+                    <table class="orders-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    رقم الطلب
+                                </th>
+
+                                <th>
+                                    العميل
+                                </th>
+
+                                <th>
+                                    التاريخ
+                                </th>
+
+                                <th>
+                                    الإجمالي
+                                </th>
+
+                                <th>
+                                    الحالة
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                          <tbody id="dashboardOrdersTableBody">
+</tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             BEST SELLERS
+        ===================================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-head">
+
+                <h2>
+                    المنتجات الأكثر مبيعًا
+                </h2>
+
+                <a href="#" class="section-link">
+                    إدارة المنتجات
+                </a>
+
+            </div>
+
+<div class="products-list" id="dashboardBestProducts">
+
+</div>
+
+        </section>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCTS PAGE
+    ===================================================== -->
+
+    <section
+        class="admin-inner-page is-hidden"
+        id="productsPage"
+    >
+
+        <div class="inner-page-header">
+
+            <h1>
+                المنتجات
+            </h1>
+
+            <p>
+                أضف وحرّر منتجات المتجر وتحكّم في ظهورها وحالتها.
+            </p>
+
+        </div>
+
+
+        <button
+            class="inner-add-btn"
+            id="addProductBtn"
+            type="button"
+        >
+            <span>
+                إضافة منتج
+            </span>
+
+            <span class="add-symbol">
+                +
+            </span>
+        </button>
+
+
+        <div class="inner-filter-box">
+
+            <div class="inner-search">
+
+                <input
+                    type="text"
+                    placeholder="ابحث باسم المنتج أو التصنيف"
+                >
+
+                <i class="fa-solid fa-magnifying-glass inner-search-icon"></i>
+
+            </div>
+
+
+            <select class="inner-select">
+
+                <option>
+                    كل التصنيفات
+                </option>
+
+                <option>
+                    عطور
+                </option>
+
+                <option>
+                    عود
+                </option>
+
+                <option>
+                    دهن عود
+                </option>
+
+            </select>
+
+
+            <select class="inner-select">
+
+                <option>
+                    كل الحالات
+                </option>
+
+                <option>
+                    متاح
+                </option>
+
+                <option>
+                    غير متاح
+                </option>
+
+            </select>
+
+
+            <select class="inner-select">
+
+                <option>
+                    الكل
+                </option>
+
+                <option>
+                    الأكثر طلبًا
+                </option>
+
+                <option>
+                    الأحدث
+                </option>
+
+            </select>
+
+
+            <div class="products-view-switch">
+
+                <button type="button">
+
+                    <i class="fa-solid fa-list"></i>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="active"
+                >
+
+                    <i class="fa-solid fa-border-all"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="inner-products-grid"
+            id="productsGrid"
+        >
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ORDERS PAGE
+    ===================================================== -->
+
+    <section
+        class="admin-inner-page is-hidden"
+        id="ordersPage"
+    >
+
+        <div class="inner-page-header">
+
+            <h1>
+                الطلبات
+            </h1>
+
+            <p>
+                تابع الطلبات الواردة وحدّث حالتها خطوة بخطوة.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH + FILTERS -->
+
+        <div class="inner-filter-box">
+
+
+            <div class="inner-search">
+
+                <input
+                    id="ordersSearch"
+                    type="text"
+                    placeholder="ابحث برقم الطلب أو اسم العميل أو الجوال"
+                >
+
+                <i class="fa-solid fa-magnifying-glass inner-search-icon"></i>
+
+            </div>
+
+
+            <select
+                id="ordersStatusFilter"
+                class="inner-select"
+            >
+
+                <option value="all">
+                    كل الحالات
+                </option>
+
+                <option value="new">
+                    جديد
+                </option>
+
+                <option value="processing">
+                    قيد التجهيز
+                </option>
+
+                <option value="completed">
+                    مكتمل
+                </option>
+
+                <option value="cancelled">
+                    ملغي
+                </option>
+
+            </select>
+
+
+            <select
+                id="ordersPeriodFilter"
+                class="inner-select"
+            >
+
+                <option value="all">
+                    كل الفترات
+                </option>
+
+                <option value="today">
+                    اليوم
+                </option>
+
+                <option value="week">
+                    هذا الأسبوع
+                </option>
+
+                <option value="month">
+                    هذا الشهر
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- ORDERS TABLE -->
+
+        <div class="inner-table-card">
+
+            <div class="inner-table-scroll">
+
+                <table class="inner-orders-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                رقم الطلب
+                            </th>
+
+                            <th>
+                                العميل
+                            </th>
+
+                            <th>
+                                المدينة
+                            </th>
+
+                            <th>
+                                التاريخ
+                            </th>
+
+                            <th>
+                                الإجمالي
+                            </th>
+
+                            <th>
+                                الحالة
+                            </th>
+
+                            <th>
+                                الإجراء
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <!--
+                        سيتم تعبئة الطلبات هنا
+                        من خلال main.js و Supabase
+                    -->
+
+                    <tbody id="ordersTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CUSTOMERS PAGE
+    ===================================================== -->
+
+    <section
+        class="admin-inner-page is-hidden"
+        id="customersPage"
+    >
+
+        <div class="inner-page-header">
+
+            <h1>
+                العملاء
+            </h1>
+
+            <p>
+                تصفح عملاء المتجر واطّلع على سجل طلباتهم.
+            </p>
+
+        </div>
+
+
+        <div class="inner-filter-box">
+
+            <div class="inner-search">
+
+                <input
+                    type="text"
+                    placeholder="ابحث بالاسم أو البريد أو الجوال أو المدينة"
+                >
+
+                <i class="fa-solid fa-magnifying-glass inner-search-icon"></i>
+
+            </div>
+
+        </div>
+
+
+        <div class="inner-table-card">
+
+            <div class="inner-table-scroll">
+
+                <table class="inner-customers-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                العميل
+                            </th>
+
+                            <th>
+                                البريد
+                            </th>
+
+                            <th>
+                                الجوال
+                            </th>
+
+                            <th>
+                                المدينة
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                   <tbody id="customersTableBody">
+
+</tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+     COMPLAINTS PAGE
+===================================================== -->
+
+<section class="admin-inner-page is-hidden" id="complaintsPage">
+
+    <div class="inner-page-header">
+
+        <div>
+            <h1>
+                الشكاوى والاستفسارات
+            </h1>
+
+            <p>
+                متابعة شكاوى واستفسارات عملاء عودانا والرد عليها.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- COMPLAINTS CARD -->
+
+    <section class="complaints-admin-card">
+
+        <div class="complaints-admin-head">
+
+            <div>
+
+                <h2>
+                    جميع الشكاوى
+                </h2>
+
+                <p>
+                    الشكاوى المرسلة من العملاء.
+                </p>
+
+            </div>
+
+
+            <div class="complaints-count">
+
+                <span id="complaintsCount">
+                    0
+                </span>
+
+                شكوى
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="complaints-filter">
+
+            <label for="complaintsStatusFilter">
+                حالة الشكوى
+            </label>
+
+            <select id="complaintsStatusFilter">
+
+                <option value="all">
+                    جميع الحالات
+                </option>
+
+                <option value="open">
+                    جديدة
+                </option>
+
+                <option value="processing">
+                    قيد المعالجة
+                </option>
+
+                <option value="resolved">
+                    تم الحل
+                </option>
+
+                <option value="closed">
+                    مغلقة
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="complaints-table-wrapper">
+
+            <table class="complaints-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            العميل
+                        </th>
+
+                        <th>
+                            الموضوع
+                        </th>
+
+                        <th>
+                            النوع
+                        </th>
+
+                        <th>
+                            الحالة
+                        </th>
+
+                        <th>
+                            التاريخ
+                        </th>
+
+                        <th>
+                            الإجراء
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="complaintsTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="6"
+                            style="text-align:center;padding:30px;"
+                        >
+                            جاري تحميل الشكاوى...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+
+    <!-- =====================================================
+         STATISTICS PAGE
+    ===================================================== -->
+
+    <section
+        class="admin-inner-page is-hidden"
+        id="statisticsPage"
+    >
+
+        <div class="inner-page-header">
+
+            <h1>
+                الإحصائيات
+            </h1>
+
+            <p>
+                مؤشرات أداء تجريبية لمتابعة نمو مبيعات المتجر.
+            </p>
+
+        </div>
+
+
+        
+
+
+        <div class="inner-statistics-list">
+
+
+            <article class="inner-stat-card">
+
+                <div class="inner-stat-icon">
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+
+                <div class="inner-stat-title">
+                    المبيعات
+                </div>
+<div class="inner-stat-value" id="statisticsSales">
+    ٠ ر.س
+</div>
+
+
+            </article>
+
+
+            <article class="inner-stat-card">
+
+                <div class="inner-stat-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <div class="inner-stat-title">
+                    الطلبات
+                </div>
+
+                <div class="inner-stat-value" id="statisticsOrders">
+    ٠
+</div>
+
+                
+
+            </article>
+
+
+            <article class="inner-stat-card">
+
+                <div class="inner-stat-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div class="inner-stat-title">
+                    متوسط قيمة الطلب
+                </div>
+
+                <div class="inner-stat-value" id="statisticsAverageOrder">
+    ٠ ر.س
+</div>
+
+
+            </article>
+
+
+            <article class="inner-stat-card">
+
+                <div class="inner-stat-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+                <div class="inner-stat-title">
+                    العملاء
+                </div>
+<div class="inner-stat-value" id="statisticsCustomers">
+    ٠
+</div>
+
+            </article>
+
+<div class="statistics-extra">
+
+
+    <!-- =====================================================
+         SALES CHART
+    ===================================================== -->
+
+    <article class="stats-chart-card">
+
+        <h2 class="stats-chart-title">
+            المبيعات خلال الأسبوع
+        </h2>
+
+
+        <svg
+            class="line-chart"
+            viewBox="0 0 430 245"
+            preserveAspectRatio="none"
+        >
+
+            <!-- GRID -->
+
+            <line
+                class="line-grid"
+                x1="48"
+                y1="22"
+                x2="420"
+                y2="22"
+            />
+
+            <line
+                class="line-grid"
+                x1="48"
+                y1="74"
+                x2="420"
+                y2="74"
+            />
+
+            <line
+                class="line-grid"
+                x1="48"
+                y1="126"
+                x2="420"
+                y2="126"
+            />
+
+            <line
+                class="line-grid"
+                x1="48"
+                y1="178"
+                x2="420"
+                y2="178"
+            />
+
+            <line
+                class="line-grid"
+                x1="48"
+                y1="230"
+                x2="420"
+                y2="230"
+            />
+
+
+            <!-- AXIS -->
+
+            <line
+                class="line-axis"
+                x1="48"
+                y1="22"
+                x2="48"
+                y2="230"
+            />
+
+            <line
+                class="line-axis"
+                x1="48"
+                y1="230"
+                x2="420"
+                y2="230"
+            />
+
+
+            <!-- Y LABELS -->
+
+            <text
+                class="chart-label"
+                x="39"
+                y="25"
+                text-anchor="end"
+                id="salesChartMaxLabel"
+            >
+                0
+            </text>
+
+            <text
+                class="chart-label"
+                x="39"
+                y="77"
+                text-anchor="end"
+                id="salesChart75Label"
+            >
+                0
+            </text>
+
+            <text
+                class="chart-label"
+                x="39"
+                y="129"
+                text-anchor="end"
+                id="salesChart50Label"
+            >
+                0
+            </text>
+
+            <text
+                class="chart-label"
+                x="39"
+                y="181"
+                text-anchor="end"
+                id="salesChart25Label"
+            >
+                0
+            </text>
+
+            <text
+                class="chart-label"
+                x="39"
+                y="233"
+                text-anchor="end"
+            >
+                0
+            </text>
+
+
+            <!-- DYNAMIC LINE -->
+
+            <path
+                class="line-path"
+                id="salesChartPath"
+                d=""
+            />
+
+
+            <!-- DYNAMIC POINTS -->
+
+            <g id="salesChartPoints"></g>
+
+
+            <!-- DAYS -->
+
+            <text
+                class="chart-label"
+                x="48"
+                y="242"
+                text-anchor="middle"
+            >
+                الأحد
+            </text>
+
+            <text
+                class="chart-label"
+                x="110"
+                y="242"
+                text-anchor="middle"
+            >
+                الإثنين
+            </text>
+
+            <text
+                class="chart-label"
+                x="172"
+                y="242"
+                text-anchor="middle"
+            >
+                الثلاثاء
+            </text>
+
+            <text
+                class="chart-label"
+                x="234"
+                y="242"
+                text-anchor="middle"
+            >
+                الأربعاء
+            </text>
+
+            <text
+                class="chart-label"
+                x="296"
+                y="242"
+                text-anchor="middle"
+            >
+                الخميس
+            </text>
+
+            <text
+                class="chart-label"
+                x="358"
+                y="242"
+                text-anchor="middle"
+            >
+                الجمعة
+            </text>
+
+            <text
+                class="chart-label"
+                x="420"
+                y="242"
+                text-anchor="middle"
+            >
+                السبت
+            </text>
+
+
+            <!-- TOOLTIP -->
+
+            <g id="salesChartTooltip">
+
+                <rect
+                    class="chart-tooltip"
+                    id="salesTooltipBox"
+                    x="215"
+                    y="120"
+                    width="135"
+                    height="65"
+                    rx="12"
+                    opacity="0"
+                />
+
+                <text
+                    class="chart-tooltip-title"
+                    id="salesTooltipTitle"
+                    x="337"
+                    y="144"
+                    text-anchor="end"
+                    opacity="0"
+                >
+                    الجمعة
+                </text>
+
+                <text
+                    class="chart-tooltip-value"
+                    id="salesTooltipValue"
+                    x="337"
+                    y="168"
+                    text-anchor="end"
+                    opacity="0"
+                >
+                    المبيعات : ٠ ر.س
+                </text>
+
+            </g>
+
+        </svg>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         ORDERS BAR CHART
+    ===================================================== -->
+
+    <article class="stats-chart-card">
+
+        <h2 class="stats-chart-title">
+            عدد الطلبات
+        </h2>
+
+
+        <div
+            class="bar-chart"
+            id="ordersBarChart"
+        >
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="0"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    الأحد
+                </span>
+
+            </div>
+
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="1"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    الإثنين
+                </span>
+
+            </div>
+
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="2"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    الثلاثاء
+                </span>
+
+            </div>
+
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="3"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    الأربعاء
+                </span>
+
+            </div>
+
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="4"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    الخميس
+                </span>
+
+            </div>
+
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="5"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    الجمعة
+                </span>
+
+            </div>
+
+
+            <div class="bar-item">
+
+                <div
+                    class="bar-fill"
+                    data-day="6"
+                    style="height:18px"
+                ></div>
+
+                <span class="bar-label">
+                    السبت
+                </span>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         TOP PRODUCTS
+    ===================================================== -->
+
+    <article class="stats-chart-card">
+
+        <h2 class="stats-chart-title">
+            أفضل المنتجات مبيعًا
+        </h2>
+
+
+        <div
+            class="horizontal-chart"
+            id="topProductsChart"
+        >
+
+            <!-- سيتم إنشاء المنتجات من Supabase -->
+
+        </div>
+
+    </article>
+
+
+</div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SETTINGS PAGE
+    ===================================================== -->
+
+    <section
+        class="admin-inner-page is-hidden"
+        id="settingsPage"
+    >
+
+        <div class="inner-page-header">
+
+            <h1>
+                الإعدادات
+            </h1>
+
+            <p>
+                جميع الإعدادات متاحة في هذا العرض التجريبي فقط.
+            </p>
+
+        </div>
+
+
+        <button
+            class="settings-save"
+            id="saveSettings"
+            type="button"
+        >
+            حفظ التغييرات
+        </button>
+
+
+
+        <!-- STORE -->
+
+        <section class="settings-card">
+
+            <h2 class="settings-card-title">
+                معلومات المتجر
+            </h2>
+
+            <p class="settings-card-desc">
+                الاسم ووسائل التواصل ورسالة المتجر.
+            </p>
+
+
+            <div class="settings-field">
+
+                <label for="storeName">
+                    اسم المتجر
+                </label>
+
+                <input
+                    id="storeName"
+                    type="text"
+                    value="عودانا | OUDANA"
+                >
+
+            </div>
+
+
+            <div class="settings-field">
+
+                <label for="storeEmail">
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    id="storeEmail"
+                    type="email"
+                    value="info@oudana.sa"
+                >
+
+            </div>
+
+
+            <div class="settings-field">
+
+                <label for="storePhone">
+                    رقم الجوال
+                </label>
+
+                <input
+                    id="storePhone"
+                    type="text"
+                    value="0554400110"
+                >
+
+            </div>
+
+
+            <div class="settings-field">
+
+                <label for="storeMessage">
+                    رسالة المتجر
+                </label>
+
+                <textarea id="storeMessage">عطور وعود فاخر بخطوات أصيلة توصلك أينما كنت.</textarea>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SHIPPING -->
+
+        <section class="settings-card">
+
+            <h2 class="settings-card-title" >
+                الشحن والتوصيل
+            </h2>
+
+
+            <p class="settings-card-desc">
+                رسوم الشحن وحد الشحن المجاني ومدة التوصيل.
+            </p>
+
+
+            <div class="settings-field">
+
+                <label for="freeShipping">
+                    حد الشحن المجاني (ر.س)
+                </label>
+
+                <input
+                    id="freeShipping"
+                    type="number"
+                    value="500"
+                    min="0"
+                >
+
+            </div>
+
+
+            <div class="settings-field">
+
+                <label for="shippingFee">
+                    رسوم الشحن (ر.س)
+                </label>
+
+                <input
+                    id="shippingFee"
+                    type="number"
+                    value="25"
+                    min="0"
+                >
+
+            </div>
+
+
+            <div class="settings-field">
+
+                <label for="deliveryDays">
+                    مدة التوصيل (أيام)
+                </label>
+
+                <input
+                    id="deliveryDays"
+                    type="number"
+                    value="3"
+                    min="0"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ORDERS SETTINGS -->
+
+        <section class="settings-card">
+
+            <h2 class="settings-card-title">
+                الطلبات
+            </h2>
+
+            <p class="settings-card-desc">
+                سلوك الطلبات والإشعارات.
+            </p>
+
+
+            <div class="settings-toggle-row">
+
+                <div class="settings-toggle-copy">
+
+                    <div class="settings-toggle-title">
+                        تأكيد الطلبات تلقائيًا
+                    </div>
+
+                    <div class="settings-toggle-desc">
+                        تحويل الطلب الجديد إلى قيد التجهيز
+                    </div>
+
+                </div>
+
+
+                <label class="settings-switch">
+
+                    <input
+                    id="autoConfirmOrders"
+                        type="checkbox"
+                        checked
+                    >
+
+                    <span class="settings-slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="settings-toggle-row">
+
+                <div class="settings-toggle-copy">
+
+                    <div class="settings-toggle-title">
+                        إشعارات البريد
+                    </div>
+
+                    <div class="settings-toggle-desc">
+                        إرسال تنبيه عند وصول طلب جديد
+                    </div>
+
+                </div>
+
+
+                <label class="settings-switch">
+
+                    <input
+                     id="emailNotifications"
+                        type="checkbox"
+                        checked
+                    >
+
+                    <span class="settings-slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ACCOUNT -->
+
+        <section class="settings-card">
+
+            <h2 class="settings-card-title">
+                الحساب
+            </h2>
+
+            <p class="settings-card-desc">
+                بيانات مسؤول المتجر الظاهرة في اللوحة.
+            </p>
+
+
+            <div class="settings-field">
+
+                <label for="adminName">
+                    الاسم
+                </label>
+
+                <input
+                    id="adminName"
+                    type="text"
+                    value="روان"
+                >
+
+            </div>
+
+
+            <div class="settings-field">
+
+                <label for="adminEmail">
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    id="adminEmail"
+                    type="email"
+                    value="admin@oudana.sa"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SECURITY -->
+
+        <section class="settings-card">
+
+            <h2 class="settings-card-title">
+                الأمان
+            </h2>
+
+            <p class="settings-card-desc">
+                خيارات عرضية فقط — لا يوجد نظام مصادقة حقيقي في هذه المرحلة.
+            </p>
+
+
+            <div class="settings-toggle-row">
+
+                <div class="settings-toggle-copy">
+
+                    <div class="settings-toggle-title">
+                        التحقق بخطوتين
+                    </div>
+
+                    <div class="settings-toggle-desc">
+                        واجهة تجريبية غير مفعلة فعليًا
+                    </div>
+
+                </div>
+
+
+                <label class="settings-switch">
+
+                    <input
+                    id="twoFactorEnabled"
+                        type="checkbox"
+                    >
+
+                    <span class="settings-slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     MENU BACKDROP
+========================================================= -->
+
+<div
+    class="menu-backdrop"
+    id="menuBackdrop"
+></div>
+
+
+
+<!-- =========================================================
+     SIDE MENU
+========================================================= -->
+
+<aside
+    class="side-menu"
+    id="sideMenu"
+>
+
+
+    <!-- MENU HEADER -->
+
+    <div class="side-menu-top">
+
+        <div class="menu-brand">
+
+            <div class="menu-brand-mark">
+                ع
+            </div>
+
+
+            <div class="menu-brand-text">
+
+                <span class="menu-brand-ar">
+                    عودانا
+                </span>
+
+                <span class="menu-brand-en">
+                    OUDANA
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="menu-close"
+            id="closeMenu"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="side-nav">
+
+
+        <a
+            href="#"
+            class="active"
+            data-page="dashboard"
+        >
+
+            <i class="fa-solid fa-border-all"></i>
+
+            <span>
+                الرئيسية
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            data-page="products"
+        >
+
+            <i class="fa-solid fa-cube"></i>
+
+            <span>
+                المنتجات
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            data-page="orders"
+        >
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span>
+                الطلبات
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            data-page="customers"
+        >
+
+            <i class="fa-regular fa-user"></i>
+
+            <span>
+                العملاء
+            </span>
+
+        </a>
+
+        <a href="#" data-page="complaints">
+
+    <i class="fa-solid fa-message"></i>
+
+    <span>
+        الشكاوى والاستفسارات
+    </span>
+
+</a>
+
+
+        <a
+            href="#"
+            data-page="statistics"
+        >
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <span>
+                الإحصائيات
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            data-page="settings"
+        >
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                الإعدادات
+            </span>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- MENU BOTTOM -->
+
+    <div class="side-menu-bottom">
+
+
+        <div class="admin-profile">
+
+            <div class="admin-avatar">
+                ر
+            </div>
+
+
+            <div class="admin-details">
+
+                <div class="admin-name">
+                    روان
+                </div>
+
+                <div class="admin-email">
+                    admin@oudana.sa
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="logout">
+
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+            <span>
+                تسجيل الخروج
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     ADD PRODUCT MODAL
+========================================================= -->
+
+<div
+    class="product-modal-backdrop"
+    id="productModalBackdrop"
+>
+
+    <div
+        class="product-modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+
+        <div class="product-modal-header">
+
+            <div>
+
+                <h2>
+                    إضافة منتج
+                </h2>
+
+                <p>
+                    أدخلي بيانات المنتج ثم احفظيه في المتجر.
+                </p>
+
+            </div>
+
+
+            <button
+                class="product-modal-close"
+                id="closeProductModal"
+                type="button"
+                aria-label="إغلاق"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form id="productForm">
+
+
+            <div class="product-form-grid">
+
+
+                <!-- اسم المنتج -->
+
+                <div class="product-form-field product-form-full">
+
+                    <label for="productName">
+                        اسم المنتج
+                    </label>
+
+                    <input
+                        id="productName"
+                        type="text"
+                        placeholder="مثال: عود كمبودي فاخر"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- التصنيف -->
+
+                <div class="product-form-field">
+
+                    <label for="productCategory">
+                        التصنيف
+                    </label>
+
+                    <select
+                        id="productCategory"
+                        required
+                    >
+
+                        <option value="">
+                            اختاري التصنيف
+                        </option>
+
+                        <option value="عطور">
+                            عطور
+                        </option>
+
+                        <option value="عود">
+                            عود
+                        </option>
+
+                        <option value="دهن عود">
+                            دهن عود
+                        </option>
+
+                        <option value="بخور">
+                            بخور
+                        </option>
+
+                        <option value="مسك">
+                            مسك
+                        </option>
+
+                        <option value="مخلطات">
+                            مخلطات
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- السعر -->
+
+                <div class="product-form-field">
+
+                    <label for="productPrice">
+                        السعر (ر.س)
+                    </label>
+
+                    <input
+                        id="productPrice"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="250"
+                        required
+                    >
+
+                </div>
+
+                <div class="product-form-field">
+    <label for="productStock">
+        الكمية المتوفرة
+    </label>
+
+    <input
+        id="productStock"
+        type="number"
+        min="0"
+        step="1"
+        value="0"
+        placeholder="مثال: 20"
+    >
+</div>
+
+
+
+                <!-- صورة المنتج -->
+
+                <div class="product-form-field product-form-full">
+
+                    <label for="productImage">
+
+                        صورة المنتج
+
+                        <span style="color:#9a8d7d;">
+                            (اختياري)
+                        </span>
+
+                    </label>
+
+
+                    <input
+                        id="productImage"
+                        type="file"
+                        accept="image/*"
+                    >
+
+
+                    <div
+                        id="productImagePreview"
+                        class="product-image-preview"
+                    ></div>
+
+                </div>
+
+
+
+                
+
+
+                <!-- المبيعات -->
+
+                <div class="product-form-field">
+
+                    <label for="productSalesCount">
+                        عدد المبيعات
+                    </label>
+
+                    <input
+                        id="productSalesCount"
+                        type="number"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+
+
+                <!-- الوصف -->
+
+                <div class="product-form-field product-form-full">
+
+                    <label for="productDescription">
+                        وصف المنتج
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        placeholder="اكتبي وصفًا مختصرًا للمنتج..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- حالة المنتج -->
+
+            <label class="product-availability-row">
+
+                <input
+                    id="productAvailable"
+                    type="checkbox"
+                    checked
+                >
+
+                <span>
+                    المنتج متاح للبيع
+                </span>
+
+            </label>
+
+
+
+            <!-- المنتج المميز -->
+
+            <label class="product-availability-row">
+
+                <input
+                    id="productFeatured"
+                    type="checkbox"
+                >
+
+                <span>
+                    عرض المنتج كمميز
+                </span>
+
+            </label>
+
+
+
+            <!-- الرسالة -->
+
+            <div
+                id="productFormMessage"
+                class="product-form-message"
+            ></div>
+
+
+
+            <!-- الأزرار -->
+
+            <div class="product-modal-actions">
+
+                <button
+                    class="product-cancel-btn"
+                    id="cancelProductBtn"
+                    type="button"
+                >
+                    إلغاء
+                </button>
+
+
+                <button
+                    class="product-save-btn"
+                    id="saveProductBtn"
+                    type="submit"
+                >
+                    حفظ المنتج
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="settings.js"></script>
+<script src="main.js"></script>
+
+
+</body>
+</html>

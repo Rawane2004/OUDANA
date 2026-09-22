@@ -1,0 +1,4292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>إتمام الطلب | عودانا</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <style>
+
+/* =========================================================
+   OUDANA — CHECKOUT
+========================================================= */
+
+
+:root {
+
+    --checkout-emerald: #063d39;
+
+    --checkout-emerald-dark: #022b28;
+
+    --checkout-cream: #f7f2e9;
+
+    --checkout-gold: #c9a15a;
+
+    --checkout-gold-light: #e1c589;
+
+    --checkout-text: #202725;
+
+    --checkout-muted: #77736b;
+
+    --checkout-border: rgba(6,61,57,.13);
+
+    --checkout-white: #ffffff;
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+
+.checkout-page {
+
+    min-height: 100vh;
+
+    padding: 145px 5% 155px;
+
+    background: var(--checkout-cream);
+
+}
+
+
+.checkout-container {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+
+.checkout-heading {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.checkout-eyebrow {
+
+    color: var(--checkout-gold);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.checkout-heading h1 {
+
+    font-family: var(--arabic-display);
+
+    color: var(--checkout-emerald);
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: 400;
+
+    margin: 0 0 12px;
+
+}
+
+
+.checkout-heading p {
+
+    color: var(--checkout-muted);
+
+    font-size: 13px;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+
+.checkout-progress {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.progress-step {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--checkout-emerald);
+
+    font-size: 12px;
+
+}
+
+
+.progress-number {
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--checkout-emerald);
+
+    color: white;
+
+    font-size: 11px;
+
+}
+
+
+.progress-line {
+
+    width: 40px;
+
+    height: 1px;
+
+    background: var(--checkout-gold);
+
+    opacity: .6;
+
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+
+.checkout-layout {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, .85fr);
+
+    gap: 24px;
+
+    align-items: start;
+
+}
+
+
+.checkout-main {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+.checkout-card {
+
+    background: var(--checkout-white);
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+}
+
+
+/* =========================================================
+   CARD HEADERS
+========================================================= */
+
+
+.checkout-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.checkout-card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.checkout-card-title .icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: rgba(201,161,90,.13);
+
+    color: var(--checkout-gold);
+
+}
+
+
+.checkout-card h2 {
+
+    margin: 0;
+
+    color: var(--checkout-emerald);
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+}
+
+
+.checkout-card-header small {
+
+    color: var(--checkout-muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+
+.contact-saved {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 17px;
+
+    background: #fff;
+
+}
+
+
+.contact-avatar {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #f1f4f3;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #877993;
+
+    font-size: 24px;
+
+}
+
+
+.contact-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.contact-info strong {
+
+    display: block;
+
+    color: var(--checkout-text);
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.contact-info a {
+
+    color: var(--checkout-emerald);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    direction: ltr;
+
+    display: inline-block;
+
+}
+
+
+.contact-edit {
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--checkout-emerald);
+
+    font-family: var(--arabic);
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+}
+
+
+.contact-edit i {
+
+    color: var(--checkout-gold);
+
+    margin-left: 5px;
+
+}
+
+
+.checkout-toggle-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+}
+
+
+.checkout-toggle-label {
+
+    color: var(--checkout-text);
+
+    font-size: 14px;
+
+}
+
+
+.checkout-toggle {
+
+    width: 62px;
+
+    height: 34px;
+
+    border: 0;
+
+    border-radius: 30px;
+
+    background: #d1d1d1;
+
+    padding: 4px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    transition: .3s;
+
+}
+
+
+.checkout-toggle span {
+
+    width: 26px;
+
+    height: 26px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transition: .3s;
+
+}
+
+
+.checkout-toggle.active {
+
+    background: #a5e99d;
+
+}
+
+
+.checkout-toggle.active span {
+
+    transform: translateX(-28px);
+
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+
+.checkout-form {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 17px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.form-group.full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.form-group label {
+
+    font-size: 12px;
+
+    color: var(--checkout-text);
+
+    font-weight: 500;
+
+}
+
+
+.form-group input,
+
+.form-group textarea,
+
+.form-group select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 12px;
+
+    background: #fcfbf8;
+
+    color: var(--checkout-text);
+
+    font-family: var(--arabic);
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: .3s;
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 100px;
+
+}
+
+
+.form-group input:focus,
+
+.form-group textarea:focus,
+
+.form-group select:focus {
+
+    border-color: var(--checkout-gold);
+
+    background: white;
+
+}
+
+
+.form-group input::placeholder,
+
+.form-group textarea::placeholder {
+
+    color: #aaa59b;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =========================================================
+   ADDRESS
+========================================================= */
+
+
+.address-box {
+
+    padding: 20px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 17px;
+
+    background: #fff;
+
+}
+
+
+.address-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+
+.address-heading strong {
+
+    color: var(--checkout-emerald);
+
+    font-size: 15px;
+
+}
+
+
+.address-heading button {
+
+    background: transparent;
+
+    border: 0;
+
+    color: var(--checkout-emerald);
+
+    cursor: pointer;
+
+    font-family: var(--arabic);
+
+    font-size: 12px;
+
+}
+
+
+.address-heading button i {
+
+    color: var(--checkout-gold);
+
+    margin-left: 5px;
+
+}
+
+
+.address-preview {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.address-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #f1f4f3;
+
+    color: #877993;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 20px;
+
+}
+
+
+.address-preview strong {
+
+    display: block;
+
+    color: var(--checkout-text);
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.address-preview span {
+
+    color: var(--checkout-muted);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   SHIPPING
+========================================================= */
+
+
+.shipping-option {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 17px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.shipping-option.selected {
+
+    border-color: var(--checkout-gold);
+
+    background: #fcfaf5;
+
+}
+
+
+.shipping-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.shipping-info i {
+
+    color: var(--checkout-gold);
+
+    font-size: 22px;
+
+}
+
+
+.shipping-info strong {
+
+    display: block;
+
+    color: var(--checkout-emerald);
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.shipping-info span {
+
+    color: var(--checkout-muted);
+
+    font-size: 12px;
+
+}
+
+
+.shipping-price {
+
+    color: var(--checkout-emerald);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+.shipping-option input {
+
+    accent-color: var(--checkout-emerald);
+
+}
+
+
+/* =========================================================
+   PAYMENT METHODS
+========================================================= */
+
+
+.payment-methods {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+}
+
+
+.payment-option {
+
+    background: white;
+
+    border-bottom: 1px solid var(--checkout-border);
+
+}
+
+
+.payment-option:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+.payment-option.active {
+
+    background: #fcfaf5;
+
+}
+
+
+.payment-select {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 21px;
+
+    cursor: pointer;
+
+}
+
+
+.payment-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: var(--checkout-text);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+}
+
+
+.payment-name input {
+
+    width: 21px;
+
+    height: 21px;
+
+    accent-color: var(--checkout-emerald);
+
+}
+
+
+.payment-logo {
+
+    min-width: 70px;
+
+    height: 35px;
+
+    padding: 0 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: white;
+
+    border: 1px solid #eee;
+
+    font-weight: 700;
+
+    font-size: 12px;
+
+    direction: ltr;
+
+}
+
+
+.payment-logo.apple {
+
+    color: black;
+
+    font-size: 19px;
+
+}
+
+
+.payment-logo.mada {
+
+    color: #333;
+
+    font-size: 12px;
+
+}
+
+
+.payment-logo.card {
+
+    color: #315a9d;
+
+    font-size: 20px;
+
+    gap: 4px;
+
+}
+
+
+.payment-logo.tamara {
+
+    background: linear-gradient(135deg,#f4c8d8,#cbb6eb);
+
+    color: #24202c;
+
+    font-size: 14px;
+
+}
+
+
+.payment-logo.tabby {
+
+    background: #e4f2d8;
+
+    color: #245f3d;
+
+    font-size: 14px;
+
+}
+
+
+.payment-description {
+
+    color: var(--checkout-muted);
+
+    font-size: 12px;
+
+    margin: 0;
+
+    line-height: 1.9;
+
+}
+
+
+.payment-details {
+
+    display: none;
+
+    padding: 0 21px 21px;
+
+}
+
+
+.payment-option.active .payment-details {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   CARD DETAILS
+========================================================= */
+
+
+.card-fields {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    padding-top: 5px;
+
+}
+
+
+.card-fields .full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.card-fields label {
+
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+
+    color: var(--checkout-text);
+
+}
+
+
+.card-fields input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 10px;
+
+    font-family: var(--arabic);
+
+    background: white;
+
+    outline: none;
+
+}
+
+
+.secure-note {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--checkout-muted);
+
+    font-size: 11px;
+
+    margin-top: 20px;
+
+}
+
+
+.secure-note i {
+
+    color: var(--checkout-gold);
+
+}
+
+
+/* =========================================================
+   PRIVACY
+========================================================= */
+
+
+.privacy-note {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: var(--checkout-muted);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+.privacy-note input {
+
+    margin-top: 5px;
+
+    accent-color: var(--checkout-emerald);
+
+}
+
+
+.privacy-note a {
+
+    color: var(--checkout-emerald);
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+
+.checkout-summary {
+
+    position: sticky;
+
+    top: 25px;
+
+}
+
+
+.summary-title {
+
+    font-family: var(--arabic-display);
+
+    color: var(--checkout-emerald);
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    margin: 0 0 25px;
+
+}
+
+
+.summary-items {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.summary-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.summary-image {
+
+    width: 70px;
+
+    height: 80px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    background: var(--checkout-cream);
+
+}
+
+
+.summary-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.summary-item-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.summary-item-info strong {
+
+    display: block;
+
+    color: var(--checkout-emerald);
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.summary-item-info span {
+
+    color: var(--checkout-muted);
+
+    font-size: 11px;
+
+}
+
+
+.summary-item-price {
+
+    color: var(--checkout-emerald);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+.summary-divider {
+
+    height: 1px;
+
+    background: var(--checkout-border);
+
+    margin: 20px 0;
+
+}
+
+
+.summary-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 17px;
+
+    font-size: 13px;
+
+}
+
+
+.summary-row span:first-child {
+
+    color: var(--checkout-muted);
+
+}
+
+
+.summary-row span:last-child {
+
+    color: var(--checkout-emerald);
+
+    font-weight: 500;
+
+}
+
+
+.summary-total {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--checkout-border);
+
+}
+
+
+.summary-total span:first-child {
+
+    color: var(--checkout-emerald);
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+}
+
+
+.summary-total span:last-child {
+
+    color: var(--checkout-gold);
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+}
+
+
+.currency {
+
+    font-family: var(--arabic);
+
+    font-size: 12px;
+
+    margin-right: 4px;
+
+}
+
+
+/* =========================================================
+   DISCOUNT
+========================================================= */
+
+
+.discount-section {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--checkout-border);
+
+}
+
+
+.discount-label {
+
+    display: block;
+
+    color: var(--checkout-text);
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.discount-box {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.discount-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 11px;
+
+    background: #fcfbf8;
+
+    font-family: var(--arabic);
+
+    outline: none;
+
+}
+
+
+.discount-box button {
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: var(--checkout-emerald);
+
+    color: white;
+
+    padding: 0 19px;
+
+    font-family: var(--arabic);
+
+    cursor: pointer;
+
+}
+
+
+.discount-message {
+
+    font-size: 12px;
+
+    margin-top: 9px;
+
+    color: var(--checkout-gold);
+
+}
+
+
+/* =========================================================
+   ORDER NOTE
+========================================================= */
+
+
+.order-note {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--checkout-border);
+
+}
+
+
+.order-note textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    min-height: 95px;
+
+    resize: vertical;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: 1px solid var(--checkout-border);
+
+    border-radius: 12px;
+
+    font-family: var(--arabic);
+
+    outline: none;
+
+    background: #fcfbf8;
+
+}
+
+
+/* =========================================================
+   BOTTOM PAYMENT BAR
+========================================================= */
+
+
+.checkout-bottom-bar {
+
+    position: fixed;
+
+    bottom: 0;
+
+    right: 0;
+
+    left: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    padding: 18px 5%;
+
+    background: rgba(255,255,255,.98);
+
+    border-top: 1px solid var(--checkout-border);
+
+    box-shadow: 0 -8px 35px rgba(35,28,45,.08);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+.bottom-bar-inner {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.bottom-total {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.bottom-total-label {
+
+    color: var(--checkout-text);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+.bottom-total-value {
+
+    color: var(--checkout-emerald);
+
+    font-family: var(--serif);
+
+    font-size: 29px;
+
+    font-weight: 600;
+
+    direction: ltr;
+
+}
+
+
+.bottom-payment-btn {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    min-height: 64px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    font-family: var(--arabic);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+.bottom-payment-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.apple-pay-btn {
+
+    background: #000;
+
+    color: white;
+
+}
+
+
+.apple-pay-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    direction: ltr;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 31px;
+
+    font-weight: 500;
+
+}
+
+
+.apple-pay-content i {
+
+    font-size: 30px;
+
+}
+
+
+.mada-pay-btn {
+
+    background: var(--checkout-emerald);
+
+    color: white;
+
+}
+
+
+.tamara-pay-btn {
+
+    background: linear-gradient(135deg,#f4c8d8,#cbb6eb);
+
+    color: #24202c;
+
+}
+
+
+.tabby-pay-btn {
+
+    background: #e4f2d8;
+
+    color: #245f3d;
+
+}
+
+
+.card-pay-btn {
+
+    background: var(--checkout-emerald);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+
+.empty-checkout {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+.empty-checkout i {
+
+    font-size: 45px;
+
+    color: var(--checkout-gold);
+
+    margin-bottom: 25px;
+
+}
+
+
+.empty-checkout h2 {
+
+    font-family: var(--arabic-display);
+
+    font-size: 35px;
+
+    font-weight: 400;
+
+    color: var(--checkout-emerald);
+
+    margin-bottom: 15px;
+
+}
+
+
+.empty-checkout p {
+
+    color: var(--checkout-muted);
+
+    font-size: 13px;
+
+}
+
+
+.empty-checkout a {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 28px;
+
+    background: var(--checkout-emerald);
+
+    color: white;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+
+@media (max-width: 900px) {
+
+    .checkout-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .checkout-summary {
+
+        position: static;
+
+        grid-row: 1;
+
+    }
+
+
+    .checkout-main {
+
+        grid-row: 2;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .checkout-page {
+
+        padding: 120px 16px 145px;
+
+    }
+
+
+    .checkout-heading h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .checkout-progress {
+
+        gap: 7px;
+
+    }
+
+
+    .progress-step {
+
+        font-size: 10px;
+
+        gap: 5px;
+
+    }
+
+
+    .progress-number {
+
+        width: 27px;
+
+        height: 27px;
+
+    }
+
+
+    .progress-line {
+
+        width: 18px;
+
+    }
+
+
+    .checkout-card {
+
+        padding: 22px 17px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .checkout-card h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .checkout-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-group.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .contact-saved {
+
+        padding: 15px;
+
+    }
+
+
+    .contact-avatar {
+
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 20px;
+
+    }
+
+
+    .contact-info strong {
+
+        font-size: 13px;
+
+    }
+
+
+    .checkout-toggle-label {
+
+        font-size: 13px;
+
+    }
+
+
+    .card-fields {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .card-fields .full {
+
+        grid-column: auto;
+
+    }
+
+
+    .payment-select {
+
+        padding: 17px 14px;
+
+    }
+
+
+    .payment-name {
+
+        font-size: 13px;
+
+        gap: 9px;
+
+    }
+
+
+    .payment-logo {
+
+        min-width: 55px;
+
+        font-size: 11px;
+
+    }
+
+
+    .summary-title {
+
+        font-size: 28px;
+
+    }
+
+
+    .summary-image {
+
+        width: 60px;
+
+        height: 70px;
+
+    }
+
+
+    .checkout-bottom-bar {
+
+        padding: 12px 16px;
+
+        gap: 10px;
+
+    }
+
+
+    .bottom-bar-inner {
+
+        gap: 12px;
+
+    }
+
+
+    .bottom-total {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 2px;
+
+    }
+
+
+    .bottom-total-label {
+
+        font-size: 11px;
+
+    }
+
+
+    .bottom-total-value {
+
+        font-size: 22px;
+
+    }
+
+
+    .bottom-payment-btn {
+
+        min-height: 57px;
+
+        max-width: none;
+
+    }
+
+
+    .apple-pay-content {
+
+        font-size: 25px;
+
+    }
+
+
+    .apple-pay-content i {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="checkout-page">
+
+
+<div class="checkout-container">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+
+<header class="checkout-heading">
+
+    <div class="checkout-eyebrow">
+        OUDANA / CHECKOUT
+    </div>
+
+    <h1>إتمام الطلب</h1>
+
+    <p>
+        أكملي طلبك واستمتعي بتجربة عودانا
+    </p>
+
+</header>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+
+<div class="checkout-progress">
+
+    <div class="progress-step">
+
+        <span class="progress-number">
+
+            <i class="fa-solid fa-check"></i>
+
+        </span>
+
+        <span>السلة</span>
+
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-step">
+
+        <span class="progress-number">
+            2
+        </span>
+
+        <span>إتمام الطلب</span>
+
+    </div>
+
+
+    <div class="progress-line"></div>
+
+
+    <div class="progress-step">
+
+        <span class="progress-number">
+            3
+        </span>
+
+        <span>تم الطلب</span>
+
+    </div>
+
+</div>
+
+
+<div id="checkoutContent">
+
+
+<div class="checkout-layout">
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+
+<section class="checkout-main">
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+
+<div class="checkout-card">
+
+
+<div class="checkout-card-header">
+
+    <div class="checkout-card-title">
+
+        <div class="icon">
+
+            <i class="fa-regular fa-user"></i>
+
+        </div>
+
+        <h2>معلومات التواصل</h2>
+
+    </div>
+
+    <small>
+        بيانات العميل
+    </small>
+
+</div>
+
+
+<div id="savedContact">
+
+
+<div class="contact-saved">
+
+
+    <div class="contact-avatar">
+
+        <i class="fa-regular fa-user"></i>
+
+    </div>
+
+
+    <div class="contact-info">
+
+        <strong>
+            مرحبًا بعودتك، <span id="savedName">عميل عودانا</span>!
+        </strong>
+
+        <a href="tel:" id="savedPhone">
+            سجلي بياناتك لإكمال الطلب
+        </a>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="contact-edit"
+        id="editContactBtn">
+
+        <i class="fa-solid fa-pen"></i>
+
+        تعديل
+
+    </button>
+
+
+</div>
+
+
+</div>
+
+
+<div
+    class="checkout-toggle-row">
+
+    <span class="checkout-toggle-label">
+
+        الشراء كزائر
+
+    </span>
+
+
+    <button
+        type="button"
+        class="checkout-toggle"
+        id="guestToggle"
+        aria-label="الشراء كزائر">
+
+        <span></span>
+
+    </button>
+
+</div>
+
+
+<form
+    class="checkout-form hidden"
+    id="contactForm">
+
+
+    <div class="form-group">
+
+        <label for="firstName">
+            الاسم الأول
+        </label>
+
+        <input
+            type="text"
+            id="firstName"
+            placeholder="اكتبي اسمك الأول"
+            required>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="lastName">
+            اسم العائلة
+        </label>
+
+        <input
+            type="text"
+            id="lastName"
+            placeholder="اسم العائلة"
+            required>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="phone">
+            رقم الجوال
+        </label>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="05xxxxxxxx"
+            required>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="email">
+            البريد الإلكتروني
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="example@email.com"
+            required>
+
+    </div>
+
+
+</form>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SHIPPING ADDRESS
+===================================================== -->
+
+
+<div class="checkout-card">
+
+
+<div class="checkout-card-header">
+
+    <div class="checkout-card-title">
+
+        <div class="icon">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+        <h2>التوصيل</h2>
+
+    </div>
+
+    <small>
+        تفاصيل الشحن
+    </small>
+
+</div>
+
+
+<div class="address-box">
+
+
+<div class="address-heading">
+
+    <strong>
+        عنوان التوصيل
+    </strong>
+
+
+    <button
+        type="button"
+        id="editAddressBtn">
+
+        <i class="fa-solid fa-pen"></i>
+
+        تعديل
+
+    </button>
+
+</div>
+
+
+<div
+    class="address-preview"
+    id="addressPreview">
+
+
+    <div class="address-icon">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+    </div>
+
+
+    <div>
+
+        <strong id="addressCity">
+            السعودية
+        </strong>
+
+        <span id="addressText">
+            أضيفي عنوان التوصيل
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<form
+    class="checkout-form hidden"
+    id="addressForm">
+
+
+    <div class="form-group">
+
+        <label for="city">
+            المدينة
+        </label>
+
+        <input
+            type="text"
+            id="city"
+            placeholder="مثال: جدة"
+            required>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="district">
+            الحي
+        </label>
+
+        <input
+            type="text"
+            id="district"
+            placeholder="اسم الحي"
+            required>
+
+    </div>
+
+
+    <div class="form-group full">
+
+        <label for="address">
+            العنوان بالتفصيل
+        </label>
+
+        <input
+            type="text"
+            id="address"
+            placeholder="الشارع، رقم المبنى، رقم الشقة"
+            required>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="postalCode">
+            الرمز البريدي
+        </label>
+
+        <input
+            type="text"
+            id="postalCode"
+            placeholder="الرمز البريدي">
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="notes">
+            ملاحظات التوصيل
+        </label>
+
+        <input
+            type="text"
+            id="notes"
+            placeholder="اختياري">
+
+    </div>
+
+
+</form>
+
+
+</div>
+
+
+<!-- SHIPPING OPTION -->
+
+
+<div
+    class="shipping-option selected"
+    style="margin-top:18px;">
+
+
+    <div class="shipping-info">
+
+        <i class="fa-solid fa-truck-fast"></i>
+
+        <div>
+
+            <strong>
+                فاست اكسس
+            </strong>
+
+            <span>
+                مدة التوصيل من 1 - 7 أيام عمل
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="shipping-price">
+
+        29.00
+
+        <span class="currency">
+            ر.س
+        </span>
+
+    </div>
+
+
+    <input
+        type="radio"
+        name="shipping"
+        value="29"
+        checked
+        hidden>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PAYMENT
+===================================================== -->
+
+
+<div class="checkout-card">
+
+
+<div class="checkout-card-header">
+
+    <div class="checkout-card-title">
+
+        <div class="icon">
+
+            <i class="fa-regular fa-credit-card"></i>
+
+        </div>
+
+        <h2>الدفع</h2>
+
+    </div>
+
+    <small>
+        آمن ومشفر
+    </small>
+
+</div>
+
+
+<div class="payment-methods">
+
+
+<!-- APPLE PAY -->
+
+
+<div
+    class="payment-option active"
+    data-payment="applepay">
+
+
+<label class="payment-select">
+
+
+    <div class="payment-name">
+
+        <input
+            type="radio"
+            name="payment"
+            value="applepay"
+            checked>
+
+        Apple Pay
+
+    </div>
+
+
+    <div class="payment-logo apple">
+
+        <i class="fa-brands fa-apple"></i>
+        Pay
+
+    </div>
+
+
+</label>
+
+
+<div class="payment-details">
+
+    <p class="payment-description">
+
+        الدفع السريع والآمن باستخدام Apple Pay.
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- MADA -->
+
+
+<div
+    class="payment-option"
+    data-payment="mada">
+
+
+<label class="payment-select">
+
+
+    <div class="payment-name">
+
+        <input
+            type="radio"
+            name="payment"
+            value="mada">
+
+        بطاقة مدى البنكية
+
+    </div>
+
+
+    <div class="payment-logo mada">
+
+        <span style="color:#4386c7;">مدى</span>
+
+        <span style="color:#7cae4b;">mada</span>
+
+    </div>
+
+
+</label>
+
+
+<div class="payment-details">
+
+    <p class="payment-description">
+
+        الدفع باستخدام بطاقة مدى البنكية.
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CARD -->
+
+
+<div
+    class="payment-option"
+    data-payment="card">
+
+
+<label class="payment-select">
+
+
+    <div class="payment-name">
+
+        <input
+            type="radio"
+            name="payment"
+            value="card">
+
+        بطاقة ائتمانية
+
+    </div>
+
+
+    <div class="payment-logo card">
+
+        <i class="fa-brands fa-cc-visa"></i>
+
+        <i class="fa-brands fa-cc-mastercard"></i>
+
+    </div>
+
+
+</label>
+
+
+<div class="payment-details">
+
+
+    <div class="card-fields">
+
+
+        <div class="full">
+
+            <label>
+                رقم البطاقة
+            </label>
+
+            <input
+                type="text"
+                placeholder="0000 0000 0000 0000"
+                maxlength="19">
+
+        </div>
+
+
+        <div>
+
+            <label>
+                تاريخ الانتهاء
+            </label>
+
+            <input
+                type="text"
+                placeholder="MM / YY"
+                maxlength="5">
+
+        </div>
+
+
+        <div>
+
+            <label>
+                CVV
+            </label>
+
+            <input
+                type="password"
+                placeholder="***"
+                maxlength="4">
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- TAMARA -->
+
+
+<div
+    class="payment-option"
+    data-payment="tamara">
+
+
+<label class="payment-select">
+
+
+    <div class="payment-name">
+
+        <input
+            type="radio"
+            name="payment"
+            value="tamara">
+
+        تمارا
+
+    </div>
+
+
+    <div class="payment-logo tamara">
+
+        tamara
+
+    </div>
+
+
+</label>
+
+
+<div class="payment-details">
+
+    <p class="payment-description">
+
+        قسّمي مشترياتك حتى 4 دفعات مع تمارا.
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- TABBY -->
+
+
+<div
+    class="payment-option"
+    data-payment="tabby">
+
+
+<label class="payment-select">
+
+
+    <div class="payment-name">
+
+        <input
+            type="radio"
+            name="payment"
+            value="tabby">
+
+        تابي
+
+    </div>
+
+
+    <div class="payment-logo tabby">
+
+        تابي
+
+    </div>
+
+
+</label>
+
+
+<div class="payment-details">
+
+    <p class="payment-description">
+
+        ادفعي على دفعات حسب الأهلية والموافقة.
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="secure-note">
+
+    <i class="fa-solid fa-shield-halved"></i>
+
+    بيانات الدفع محمية وآمنة
+
+</div>
+
+
+<div class="privacy-note">
+
+    <input
+        type="checkbox"
+        id="privacyCheck"
+        required>
+
+    <label for="privacyCheck">
+
+        بالمواصلة فأنت توافقين على
+
+        <a href="#">
+            سياسة الخصوصية
+        </a>
+
+    </label>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SUMMARY
+===================================================== -->
+
+
+<aside class="checkout-summary">
+
+
+<div class="checkout-card">
+
+
+<h2 class="summary-title">
+    ملخص الطلب
+</h2>
+
+
+<div
+    class="summary-items"
+    id="summaryItems">
+
+
+</div>
+
+
+<div class="summary-divider"></div>
+
+
+<div class="summary-row">
+
+    <span>
+        المجموع الفرعي
+    </span>
+
+    <span>
+
+        <span id="subtotal">
+            0.00
+        </span>
+
+        <span class="currency">
+            ر.س
+        </span>
+
+    </span>
+
+</div>
+
+
+<div class="summary-row">
+
+    <span>
+        رسوم التوصيل
+    </span>
+
+    <span>
+
+        <span id="shippingTotal">
+            29.00
+        </span>
+
+        <span class="currency">
+            ر.س
+        </span>
+
+    </span>
+
+</div>
+
+
+<div class="summary-row">
+
+    <span>
+        الخصم
+    </span>
+
+    <span>
+
+        <span id="discount">
+            0.00
+        </span>
+
+        <span class="currency">
+            ر.س
+        </span>
+
+    </span>
+
+</div>
+
+
+<div class="summary-total">
+
+    <span>
+        المجموع
+    </span>
+
+    <span>
+
+        <span id="grandTotal">
+            0.00
+        </span>
+
+        <span class="currency">
+            ر.س
+        </span>
+
+    </span>
+
+</div>
+
+
+
+<!-- DISCOUNT -->
+
+
+<div class="discount-section">
+
+
+<label
+    class="discount-label"
+    for="discountCode">
+
+    بطاقة هدية أو رمز الخصم
+
+</label>
+
+
+<div class="discount-box">
+
+    <input
+        type="text"
+        id="discountCode"
+        placeholder="اكتبِ رمز الخصم هنا">
+
+    <button
+        type="button"
+        id="applyDiscount">
+
+        تطبيق
+
+    </button>
+
+</div>
+
+
+<div
+    class="discount-message"
+    id="discountMessage">
+
+</div>
+
+
+</div>
+
+
+
+<!-- ORDER NOTE -->
+
+
+<div class="order-note">
+
+
+<div class="checkout-toggle-row"
+     style="margin-top:0;">
+
+    <span class="checkout-toggle-label">
+
+        إضافة ملاحظة للطلب
+
+    </span>
+
+
+    <button
+        type="button"
+        class="checkout-toggle"
+        id="noteToggle"
+        aria-label="إضافة ملاحظة للطلب">
+
+        <span></span>
+
+    </button>
+
+</div>
+
+
+<textarea
+    id="orderNote"
+    class="hidden"
+    placeholder="اكتبِ تفاصيل إضافية هنا..."></textarea>
+
+
+</div>
+
+
+</div>
+
+
+</aside>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     BOTTOM PAYMENT BAR
+===================================================== -->
+
+
+<div class="checkout-bottom-bar">
+
+
+<div class="bottom-bar-inner">
+
+
+<div class="bottom-total">
+
+    <span class="bottom-total-label">
+        المجموع
+    </span>
+
+    <span class="bottom-total-value">
+
+        <span id="bottomGrandTotal">
+            0.00
+        </span>
+
+        <span class="currency">
+            ر.س
+        </span>
+
+    </span>
+
+</div>
+
+
+<button
+    type="button"
+    class="bottom-payment-btn apple-pay-btn"
+    id="bottomPaymentBtn">
+
+
+    <span class="apple-pay-content">
+
+        <i class="fa-brands fa-apple"></i>
+
+        <span>Pay</span>
+
+    </span>
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="cart.js"></script>
+
+
+
+
+<script>
+
+
+/* =========================================================
+   CART
+   Uses the SAME cart system as the whole website
+========================================================= */
+
+let cart = [];
+
+
+/* =========================================================
+   LOAD CHECKOUT CART
+========================================================= */
+
+async function loadCheckoutCart() {
+
+    try {
+
+        // التأكد أن cart.js اختار مفتاح السلة الصحيح
+        await initializeSharedCart();
+
+        // استخدام السلة الموحدة نفسها
+        cart = Array.isArray(sharedCart)
+            ? [...sharedCart]
+            : [];
+
+        console.log(
+            "========== CHECKOUT CART =========="
+        );
+
+        console.log(
+            "Storage key:",
+            sharedCartStorageKey
+        );
+
+        console.log(
+            "Cart:",
+            cart
+        );
+
+        console.log(
+            "==================================="
+        );
+
+        renderSummary();
+
+    } catch (error) {
+
+        console.error(
+            "Checkout cart error:",
+            error
+        );
+
+        cart = [];
+
+        renderSummary();
+
+    }
+
+}
+
+
+
+let discountAmount = 0;
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+
+const summaryItems =
+    document.getElementById("summaryItems");
+
+
+const subtotalElement =
+    document.getElementById("subtotal");
+
+
+const shippingTotalElement =
+    document.getElementById("shippingTotal");
+
+
+const discountElement =
+    document.getElementById("discount");
+
+
+const grandTotalElement =
+    document.getElementById("grandTotal");
+
+
+const bottomGrandTotal =
+    document.getElementById("bottomGrandTotal");
+
+
+const bottomPaymentBtn =
+    document.getElementById("bottomPaymentBtn");
+
+
+const checkoutContent =
+    document.getElementById("checkoutContent");
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+
+function formatPrice(price) {
+
+    return Number(price).toFixed(2);
+
+}
+
+
+function calculateSubtotal() {
+
+    return cart.reduce(
+
+        (total, item) => {
+
+            return total +
+
+                Number(item.price || 0) *
+
+                Number(item.quantity || 0);
+
+        },
+
+        0
+
+    );
+
+}
+
+
+function getShipping() {
+
+    return 29;
+
+}
+
+
+function getGrandTotal() {
+
+    return Math.max(
+
+        0,
+
+        calculateSubtotal() +
+
+        getShipping() -
+
+        discountAmount
+
+    );
+
+}
+
+
+/* =========================================================
+   RENDER SUMMARY
+========================================================= */
+
+
+function renderSummary() {
+
+
+    if (!cart.length) {
+
+
+        checkoutContent.innerHTML = `
+
+            <div class="checkout-card empty-checkout">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <h2>سلتك فارغة</h2>
+
+                <p>
+                    أضيفي منتجاتك المفضلة إلى السلة أولًا.
+                </p>
+
+                <a href="menu.html">
+                    اكتشفي المنتجات
+                </a>
+
+            </div>
+
+        `;
+
+
+        document
+            .querySelector(".checkout-bottom-bar")
+            ?.remove();
+
+
+        return;
+
+    }
+
+
+    summaryItems.innerHTML = "";
+
+
+    cart.forEach(item => {
+
+
+        const image =
+            item.image_url ||
+            item.image ||
+            "";
+
+
+        const name =
+            item.name || "منتج عودانا";
+
+
+        const price =
+            Number(item.price || 0);
+
+
+        const quantity =
+            Number(item.quantity || 1);
+
+
+        const itemElement =
+            document.createElement("div");
+
+
+        itemElement.className =
+            "summary-item";
+
+
+        const imageBox =
+            document.createElement("div");
+
+
+        imageBox.className =
+            "summary-image";
+
+
+        if (image) {
+
+
+            const img =
+                document.createElement("img");
+
+
+            img.src = image;
+
+            img.alt = name;
+
+            imageBox.appendChild(img);
+
+
+        } else {
+
+
+            imageBox.innerHTML = `
+
+                <i
+                    class="fa-solid fa-bottle-droplet"
+                    style="
+                        display:grid;
+                        place-items:center;
+                        height:100%;
+                        color:#c9a15a;
+                        font-size:25px;
+                    ">
+                </i>
+
+            `;
+
+        }
+
+
+        const info =
+            document.createElement("div");
+
+
+        info.className =
+            "summary-item-info";
+
+
+        const strong =
+            document.createElement("strong");
+
+
+        strong.textContent =
+            name;
+
+
+        const span =
+            document.createElement("span");
+
+
+        span.textContent =
+            "الكمية: " + quantity;
+
+
+        info.appendChild(strong);
+
+        info.appendChild(span);
+
+
+        const priceElement =
+            document.createElement("div");
+
+
+        priceElement.className =
+            "summary-item-price";
+
+
+        priceElement.innerHTML = `
+
+            ${formatPrice(price * quantity)}
+
+            <span class="currency">
+                ر.س
+            </span>
+
+        `;
+
+
+        itemElement.appendChild(imageBox);
+
+        itemElement.appendChild(info);
+
+        itemElement.appendChild(priceElement);
+
+
+        summaryItems.appendChild(itemElement);
+
+
+    });
+
+
+    updateTotals();
+
+}
+
+
+
+/* =========================================================
+   TOTALS
+========================================================= */
+
+
+function updateTotals() {
+
+
+    const subtotal =
+        calculateSubtotal();
+
+
+    const shipping =
+        getShipping();
+
+
+    const total =
+        getGrandTotal();
+
+
+    subtotalElement.textContent =
+        formatPrice(subtotal);
+
+
+    shippingTotalElement.textContent =
+        formatPrice(shipping);
+
+
+    discountElement.textContent =
+        formatPrice(discountAmount);
+
+
+    grandTotalElement.textContent =
+        formatPrice(total);
+
+
+    bottomGrandTotal.textContent =
+        formatPrice(total);
+
+
+}
+
+
+
+/* =========================================================
+   CONTACT TOGGLE
+========================================================= */
+
+
+const guestToggle =
+    document.getElementById("guestToggle");
+
+
+const contactForm =
+    document.getElementById("contactForm");
+
+
+const savedContact =
+    document.getElementById("savedContact");
+
+
+const editContactBtn =
+    document.getElementById("editContactBtn");
+
+
+let guestMode = false;
+
+
+function setGuestMode(enabled) {
+
+
+    guestMode = enabled;
+
+
+    guestToggle.classList.toggle(
+        "active",
+        enabled
+    );
+
+
+    contactForm.classList.toggle(
+        "hidden",
+        !enabled
+    );
+
+
+    savedContact.classList.toggle(
+        "hidden",
+        enabled
+    );
+
+
+}
+
+
+guestToggle.addEventListener(
+    "click",
+    () => {
+
+        setGuestMode(!guestMode);
+
+    }
+);
+
+
+editContactBtn.addEventListener(
+    "click",
+    () => {
+
+        setGuestMode(true);
+
+    }
+);
+
+
+
+/* =========================================================
+   ADDRESS TOGGLE
+========================================================= */
+
+
+const addressForm =
+    document.getElementById("addressForm");
+
+
+const addressPreview =
+    document.getElementById("addressPreview");
+
+
+const editAddressBtn =
+    document.getElementById("editAddressBtn");
+
+
+let addressEditing = false;
+
+
+editAddressBtn.addEventListener(
+    "click",
+    () => {
+
+
+        addressEditing =
+            !addressEditing;
+
+
+        addressForm.classList.toggle(
+            "hidden",
+            !addressEditing
+        );
+
+
+        addressPreview.classList.toggle(
+            "hidden",
+            addressEditing
+        );
+
+
+        editAddressBtn.innerHTML =
+            addressEditing
+
+                ? `
+
+                    حفظ
+
+                    <i class="fa-solid fa-check"></i>
+
+                  `
+
+                : `
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    تعديل
+
+                  `;
+
+
+    }
+);
+
+
+
+/* =========================================================
+   PAYMENT SELECTION
+========================================================= */
+
+
+const paymentOptions =
+    document.querySelectorAll(
+        ".payment-option"
+    );
+
+
+const paymentInputs =
+    document.querySelectorAll(
+        'input[name="payment"]'
+    );
+
+
+function updatePaymentButton(payment) {
+
+
+    if (payment === "applepay") {
+
+
+        bottomPaymentBtn.className =
+            "bottom-payment-btn apple-pay-btn";
+
+
+        bottomPaymentBtn.innerHTML = `
+
+            <span class="apple-pay-content">
+
+                <i class="fa-brands fa-apple"></i>
+
+                <span>Pay</span>
+
+            </span>
+
+        `;
+
+
+    }
+
+
+    else if (payment === "mada") {
+
+
+        bottomPaymentBtn.className =
+            "bottom-payment-btn mada-pay-btn";
+
+
+        bottomPaymentBtn.innerHTML = `
+
+            الدفع عبر مدى
+
+        `;
+
+
+    }
+
+
+    else if (payment === "card") {
+
+
+        bottomPaymentBtn.className =
+            "bottom-payment-btn card-pay-btn";
+
+
+        bottomPaymentBtn.innerHTML = `
+
+            الدفع بالبطاقة
+
+        `;
+
+
+    }
+
+
+    else if (payment === "tamara") {
+
+
+        bottomPaymentBtn.className =
+            "bottom-payment-btn tamara-pay-btn";
+
+
+        bottomPaymentBtn.innerHTML = `
+
+            الدفع عبر تمارا
+
+        `;
+
+
+    }
+
+
+    else if (payment === "tabby") {
+
+
+        bottomPaymentBtn.className =
+            "bottom-payment-btn tabby-pay-btn";
+
+
+        bottomPaymentBtn.innerHTML = `
+
+            الدفع عبر تابي
+
+        `;
+
+
+    }
+
+}
+
+
+paymentInputs.forEach(input => {
+
+
+    input.addEventListener(
+        "change",
+        () => {
+
+
+            paymentOptions.forEach(
+                option => {
+
+                    option.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            input
+                .closest(".payment-option")
+                .classList.add("active");
+
+
+            updatePaymentButton(
+                input.value
+            );
+
+
+        }
+    );
+
+
+});
+
+
+/* =========================================================
+   DISCOUNT
+========================================================= */
+
+
+document
+    .getElementById("applyDiscount")
+    .addEventListener(
+        "click",
+        () => {
+
+
+            const code =
+                document
+                    .getElementById(
+                        "discountCode"
+                    )
+                    .value
+                    .trim()
+                    .toUpperCase();
+
+
+            const message =
+                document.getElementById(
+                    "discountMessage"
+                );
+
+
+            if (!code) {
+
+
+                message.textContent =
+                    "اكتبي رمز الخصم أولًا.";
+
+
+                return;
+
+            }
+
+
+            if (code === "OUDANA10") {
+
+
+                discountAmount =
+                    calculateSubtotal() * 0.10;
+
+
+                message.textContent =
+                    "تم تطبيق الخصم بنجاح ✨";
+
+
+            }
+
+
+            else {
+
+
+                discountAmount = 0;
+
+
+                message.textContent =
+                    "رمز الخصم غير صحيح.";
+
+            }
+
+
+            updateTotals();
+
+
+        }
+    );
+
+
+
+/* =========================================================
+   ORDER NOTE
+========================================================= */
+
+
+const noteToggle =
+    document.getElementById("noteToggle");
+
+
+const orderNote =
+    document.getElementById("orderNote");
+
+
+noteToggle.addEventListener(
+    "click",
+    () => {
+
+
+        const active =
+            noteToggle.classList.toggle(
+                "active"
+            );
+
+
+        orderNote.classList.toggle(
+            "hidden",
+            !active
+        );
+
+
+    }
+);
+
+
+
+/* =========================================================
+   SAVE ADDRESS PREVIEW
+========================================================= */
+
+
+function updateAddressPreview() {
+
+
+    const city =
+        document.getElementById(
+            "city"
+        ).value.trim();
+
+
+    const district =
+        document.getElementById(
+            "district"
+        ).value.trim();
+
+
+    const address =
+        document.getElementById(
+            "address"
+        ).value.trim();
+
+
+    if (city) {
+
+
+        document.getElementById(
+            "addressCity"
+        ).textContent =
+            city + "، السعودية";
+
+
+    }
+
+
+    if (district || address) {
+
+
+        document.getElementById(
+            "addressText"
+        ).textContent =
+            [district, address]
+                .filter(Boolean)
+                .join("، ");
+
+    }
+
+
+}
+
+
+addressForm.addEventListener(
+    "submit",
+    event => {
+
+        event.preventDefault();
+
+        updateAddressPreview();
+
+    }
+);
+
+
+
+/* =========================================================
+   PLACE ORDER
+========================================================= */
+
+
+bottomPaymentBtn.addEventListener(
+    "click",
+    () => {
+
+
+        const privacyCheck =
+            document.getElementById(
+                "privacyCheck"
+            );
+
+
+        if (!privacyCheck.checked) {
+
+
+            alert(
+                "يرجى الموافقة على سياسة الخصوصية أولًا."
+            );
+
+
+            privacyCheck.focus();
+
+
+            return;
+
+        }
+
+
+        if (guestMode) {
+
+
+            const requiredInputs =
+                contactForm.querySelectorAll(
+                    "input[required]"
+                );
+
+
+            for (
+                const input
+                of requiredInputs
+            ) {
+
+
+                if (!input.value.trim()) {
+
+
+                    input.focus();
+
+
+                    alert(
+                        "فضلاً أكملِي بيانات التواصل."
+                    );
+
+
+                    return;
+
+                }
+
+            }
+
+        }
+
+
+        if (addressEditing) {
+
+
+            const requiredInputs =
+                addressForm.querySelectorAll(
+                    "input[required]"
+                );
+
+
+            for (
+                const input
+                of requiredInputs
+            ) {
+
+
+                if (!input.value.trim()) {
+
+
+                    input.focus();
+
+
+                    alert(
+                        "فضلاً أكملِي عنوان التوصيل."
+                    );
+
+
+                    return;
+
+                }
+
+            }
+
+
+            updateAddressPreview();
+
+        }
+
+
+        const payment =
+            document.querySelector(
+                'input[name="payment"]:checked'
+            ).value;
+
+
+        const orderData = {
+
+
+            customer: {
+
+
+                firstName:
+                    document.getElementById(
+                        "firstName"
+                    ).value,
+
+
+                lastName:
+                    document.getElementById(
+                        "lastName"
+                    ).value,
+
+
+                phone:
+                    document.getElementById(
+                        "phone"
+                    ).value,
+
+
+                email:
+                    document.getElementById(
+                        "email"
+                    ).value
+
+            },
+
+
+            address: {
+
+
+                city:
+                    document.getElementById(
+                        "city"
+                    ).value,
+
+
+                district:
+                    document.getElementById(
+                        "district"
+                    ).value,
+
+
+                address:
+                    document.getElementById(
+                        "address"
+                    ).value,
+
+
+                postalCode:
+                    document.getElementById(
+                        "postalCode"
+                    ).value,
+
+
+                notes:
+                    document.getElementById(
+                        "notes"
+                    ).value
+
+            },
+
+
+            paymentMethod:
+                payment,
+
+
+            items:
+                cart,
+
+
+            subtotal:
+                calculateSubtotal(),
+
+
+            shipping:
+                getShipping(),
+
+
+            discount:
+                discountAmount,
+
+
+            total:
+                getGrandTotal(),
+
+
+            orderNote:
+                orderNote.value
+
+
+        };
+
+
+        localStorage.setItem(
+
+            "oudana_pending_order",
+
+            JSON.stringify(orderData)
+
+        );
+
+
+        alert(
+
+            "تم تجهيز الطلب للتجربة. ربط بوابة الدفع سيتم لاحقًا."
+
+        );
+
+
+        console.log(
+
+            "OUDANA ORDER:",
+
+            orderData
+
+        );
+
+
+    }
+);
+
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+
+setGuestMode(false);
+
+
+updatePaymentButton("applepay");
+
+
+loadCheckoutCart();
+
+
+</script>
+
+
+</body>
+
+</html>

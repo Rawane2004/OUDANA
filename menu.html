@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>المنتجات | عودانا</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ANNOUNCEMENT
+    ====================================================== -->
+
+    <div class="announcement">
+        <i class="fa-solid fa-sparkles"></i>
+        أصالة العود والعطر الفاخر — توصيل يليق بك
+    </div>
+
+
+    <!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <!-- Right -->
+
+        <div class="header-side right-side">
+
+            <button
+                class="icon-btn search-btn"
+                id="searchBtn"
+                aria-label="بحث">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <a
+    href="login.html"
+    class="icon-btn"
+    id="accountBtn"
+    aria-label="حسابي"
+>
+    <i class="fa-regular fa-user"></i>
+</a>
+
+        </div>
+
+
+        <!-- Logo -->
+
+        <a
+            href="index.html"
+            class="logo">
+
+            <span class="logo-arabic">
+                عودانا
+            </span>
+
+            <span class="logo-english">
+                OUDANA
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a
+                href="menu.html"
+                class="active">
+
+                المتجر
+
+            </a>
+
+            <a href="index.html#collections">
+                المجموعات
+            </a>
+
+            <a href="index.html#story">
+                قصتنا
+            </a>
+
+            <a href="index.html#contact">
+                تواصل معنا
+            </a>
+
+        </nav>
+
+
+        <!-- Left -->
+
+        <div class="header-side left-side">
+
+            <button
+                class="icon-btn cart-btn"
+                id="cartBtn"
+                aria-label="السلة">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount">
+
+                    0
+
+                </span>
+
+            </button>
+
+
+            <button
+                class="menu-btn"
+                id="mobileMenuBtn"
+                aria-label="القائمة">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+
+    <!-- =====================================================
+         PAGE HERO
+    ====================================================== -->
+
+    <section class="menu-hero">
+
+        <div class="menu-hero-content">
+
+            <span class="eyebrow dark">
+                OUDANA COLLECTION
+            </span>
+
+            <h1>
+                مجموعتنا
+                <span>الفاخرة</span>
+            </h1>
+
+            <p>
+                اكتشفي مجموعة مختارة من أجود أنواع العود
+                والعطور التي صُنعت بعناية لتترك أثرًا لا يُنسى.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRODUCTS
+    ====================================================== -->
+
+    <main>
+
+        <section class="products-section menu-products">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow dark">
+                        OUR COLLECTION
+                    </span>
+
+                    <h2>
+                        اكتشفي
+                        <span>منتجاتنا</span>
+                    </h2>
+
+                </div>
+
+                <span
+                    class="products-result-count"
+                    id="productsResultCount">
+                    0 منتج
+                </span>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="menu-filters">
+
+                
+
+                <div id="categoryFilters"></div>
+
+            </div>
+
+
+            <!-- PRODUCTS -->
+
+            <div
+                class="products-grid"
+                id="productsGrid">
+
+                <!-- Products will be inserted here -->
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div
+                class="products-loading"
+                id="productsLoading">
+
+                <div class="loading-icon">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                </div>
+
+                <p>
+                    نجهز لكِ المجموعة...
+                </p>
+
+            </div>
+
+
+            <!-- EMPTY -->
+
+            <div
+                class="products-empty"
+                id="productsEmpty"
+                hidden>
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>
+                    لا توجد منتجات
+                </h3>
+
+                <p>
+                    لا توجد منتجات متاحة في هذه المجموعة حاليًا.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         CART DRAWER
+    ====================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay">
+    </div>
+
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer">
+
+        <div class="cart-header">
+
+            <h2>
+                سلة مشترياتك
+            </h2>
+
+            <button
+                class="cart-close"
+                id="cartClose"
+                aria-label="إغلاق">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="cartContent"
+            class="cart-content">
+
+            <!-- Cart rendered by JS -->
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         SEARCH
+    ====================================================== -->
+
+    <div
+        class="search-overlay"
+        id="searchOverlay">
+
+        <button
+            class="search-close"
+            id="searchClose">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="search-container">
+
+            <span>
+                SEARCH OUDANA
+            </span>
+
+            <div class="search-input-wrapper">
+
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="ابحثي عن منتج..."
+                    autocomplete="off">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu">
+
+        <button
+            class="mobile-close"
+            id="mobileMenuClose">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="mobile-menu-logo">
+
+            عودانا
+
+            <small>
+                OUDANA
+            </small>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="menu.html">
+                المنتجات
+            </a>
+
+            <a href="index.html#collections">
+                المجموعات
+            </a>
+
+            <a href="index.html#story">
+                قصتنا
+            </a>
+            
+            <a href="index.html#contact">
+                تواصل معنا
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- =====================================================
+         javaScript
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="settings.js"></script>
+<script src="auth.js"></script>
+<script src="cart.js"></script>
+<script src="menu.js"></script>
+
+</body>
+</html>

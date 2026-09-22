@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>عودانا | إنشاء حساب</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         STYLE
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ====================================================== */
+
+        :root {
+
+            --emerald: #063d39;
+            --emerald-dark: #022b28;
+            --emerald-light: #0b514b;
+
+            --cream: #f7f2e9;
+            --cream-dark: #eee6d8;
+
+            --gold: #c9a15a;
+            --gold-light: #e1c589;
+
+            --black: #111513;
+            --text: #202725;
+            --muted: #77736b;
+
+            --border: rgba(6, 61, 57, .13);
+
+            --serif: "Playfair Display", serif;
+            --arabic: "IBM Plex Sans Arabic", sans-serif;
+            --arabic-display: "Aref Ruqaa", serif;
+
+            --transition: .22s cubic-bezier(.22,.61,.36,1);
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: var(--arabic);
+
+            color: var(--text);
+
+            background: var(--cream);
+
+            overflow-x: hidden;
+        }
+
+
+        button,
+        input {
+
+            font-family: inherit;
+        }
+
+
+        button {
+
+            cursor: pointer;
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           PAGE
+        ====================================================== */
+
+        .register-page {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 40px 20px;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(201,161,90,.14),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 85%,
+                    rgba(6,61,57,.13),
+                    transparent 30%
+                ),
+
+                var(--cream);
+        }
+
+
+        /* =====================================================
+           DECORATIVE SHAPES
+        ====================================================== */
+
+        .decor-circle {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        .decor-circle.one {
+
+            width: 480px;
+
+            height: 480px;
+
+            top: -230px;
+
+            right: -170px;
+
+            border: 1px solid rgba(201,161,90,.25);
+        }
+
+
+        .decor-circle.two {
+
+            width: 360px;
+
+            height: 360px;
+
+            bottom: -190px;
+
+            left: -120px;
+
+            background: rgba(6,61,57,.045);
+        }
+
+
+        .decor-line {
+
+            position: absolute;
+
+            width: 1px;
+
+            height: 300px;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    rgba(201,161,90,.5),
+                    transparent
+                );
+
+            right: 8%;
+
+            top: 15%;
+
+            transform: rotate(25deg);
+
+            opacity: .6;
+        }
+
+
+        /* =====================================================
+           MAIN WRAPPER
+        ====================================================== */
+
+        .register-wrapper {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 1050px;
+
+            min-height: 700px;
+
+            display: grid;
+
+            grid-template-columns: .95fr 1.05fr;
+
+            overflow: hidden;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.58);
+
+            border: 1px solid rgba(255,255,255,.75);
+
+            box-shadow:
+
+                0 35px 90px rgba(6,61,57,.14),
+
+                0 10px 30px rgba(6,61,57,.06);
+
+            backdrop-filter: blur(18px);
+        }
+
+
+        /* =====================================================
+           BRAND SIDE
+        ====================================================== */
+
+        .brand-side {
+
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            padding: 55px;
+
+            overflow: hidden;
+
+            color: white;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(201,161,90,.18),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    145deg,
+                    var(--emerald-light),
+                    var(--emerald-dark)
+                );
+        }
+
+
+        .brand-side::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 360px;
+
+            height: 360px;
+
+            border: 1px solid rgba(225,197,137,.18);
+
+            border-radius: 50%;
+
+            left: -180px;
+
+            bottom: -180px;
+        }
+
+
+        .brand-side::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 160px;
+
+            height: 160px;
+
+            border: 1px solid rgba(225,197,137,.15);
+
+            border-radius: 50%;
+
+            left: 80px;
+
+            bottom: 80px;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .brand-logo {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+
+
+        .brand-logo-arabic {
+
+            font-family: var(--arabic-display);
+
+            font-size: 58px;
+
+            font-weight: 400;
+
+            line-height: .9;
+
+            color: var(--gold-light);
+        }
+
+
+        .brand-logo-english {
+
+            margin-top: 10px;
+
+            font-family: var(--serif);
+
+            font-size: 13px;
+
+            letter-spacing: 5px;
+
+            opacity: .85;
+        }
+
+
+        /* =====================================================
+           BRAND CONTENT
+        ====================================================== */
+
+        .brand-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 390px;
+        }
+
+
+        .brand-eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+
+            font-size: 12px;
+
+            color: var(--gold-light);
+
+            letter-spacing: 2px;
+        }
+
+
+        .brand-eyebrow::before {
+
+            content: "";
+
+            width: 35px;
+
+            height: 1px;
+
+            background: var(--gold);
+        }
+
+
+        .brand-content h1 {
+
+            margin-bottom: 22px;
+
+            font-family: var(--arabic-display);
+
+            font-size: clamp(42px, 5vw, 62px);
+
+            font-weight: 400;
+
+            line-height: 1.15;
+        }
+
+
+        .brand-content p {
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            font-weight: 300;
+
+            color: rgba(255,255,255,.7);
+        }
+
+
+        .brand-footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 11px;
+
+            color: rgba(255,255,255,.45);
+        }
+
+
+        .brand-footer i {
+
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           FORM SIDE
+        ====================================================== */
+
+        .form-side {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 50px 55px;
+        }
+
+
+        .register-form-wrapper {
+
+            width: 100%;
+
+            max-width: 420px;
+        }
+
+
+        /* =====================================================
+           FORM HEADER
+        ====================================================== */
+
+        .form-header {
+
+            margin-bottom: 30px;
+        }
+
+
+        .form-header .mini-title {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-family: var(--serif);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            color: var(--gold);
+        }
+
+
+        .form-header h2 {
+
+            margin-bottom: 10px;
+
+            font-family: var(--arabic-display);
+
+            font-size: 44px;
+
+            font-weight: 400;
+
+            color: var(--emerald);
+        }
+
+
+        .form-header p {
+
+            font-size: 14px;
+
+            color: var(--muted);
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           FORM
+        ====================================================== */
+
+        .register-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+
+        .field {
+
+            position: relative;
+        }
+
+
+        .field label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            color: var(--text);
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+        }
+
+
+        .input-wrapper > i {
+
+            position: absolute;
+
+            top: 50%;
+
+            right: 17px;
+
+            transform: translateY(-50%);
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            pointer-events: none;
+
+            transition: var(--transition);
+        }
+
+
+        .input-wrapper input {
+
+            width: 100%;
+
+            height: 53px;
+
+            padding: 0 48px 0 48px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background: rgba(255,255,255,.72);
+
+            color: var(--text);
+
+            font-size: 14px;
+
+            transition: var(--transition);
+        }
+
+
+        .input-wrapper input::placeholder {
+
+            color: #aaa69f;
+        }
+
+
+        .input-wrapper input:focus {
+
+            border-color: var(--gold);
+
+            background: white;
+
+            box-shadow:
+
+                0 0 0 4px rgba(201,161,90,.09);
+        }
+
+
+        .input-wrapper:focus-within > i {
+
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           PASSWORD TOGGLE
+        ====================================================== */
+
+        .password-toggle {
+
+            position: absolute;
+
+            left: 16px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 25px;
+
+            height: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--muted);
+
+            transition: var(--transition);
+        }
+
+
+        .password-toggle:hover {
+
+            color: var(--emerald);
+        }
+
+
+        /* =====================================================
+           TERMS
+        ====================================================== */
+
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            margin-top: 1px;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            color: var(--muted);
+        }
+
+
+        .terms input {
+
+            width: 15px;
+
+            height: 15px;
+
+            margin-top: 3px;
+
+            flex-shrink: 0;
+
+            accent-color: var(--emerald);
+
+            cursor: pointer;
+        }
+
+
+        .terms a {
+
+            color: var(--emerald);
+
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+
+        .terms a:hover {
+
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           REGISTER BUTTON
+        ====================================================== */
+
+        .register-btn {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 57px;
+
+            margin-top: 3px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            overflow: hidden;
+
+            border: 0;
+
+            border-radius: 13px;
+
+            background: var(--emerald);
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: var(--transition);
+        }
+
+
+        .register-btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.12),
+                    transparent
+                );
+
+            transform: translateX(100%);
+
+            transition: .6s ease;
+        }
+
+
+        .register-btn:hover {
+
+            background: var(--emerald-dark);
+
+            transform: translateY(-2px);
+
+            box-shadow:
+
+                0 12px 25px rgba(6,61,57,.18);
+        }
+
+
+        .register-btn:hover::before {
+
+            transform: translateX(-100%);
+        }
+
+
+        .register-btn:active {
+
+            transform: translateY(0);
+        }
+
+
+        .register-btn.loading {
+
+            pointer-events: none;
+
+            opacity: .75;
+        }
+
+
+        .register-btn.loading .btn-text {
+
+            opacity: .7;
+        }
+
+
+        /* =====================================================
+           SPINNER
+        ====================================================== */
+
+        .spinner {
+
+            display: none;
+
+            width: 17px;
+
+            height: 17px;
+
+            border: 2px solid rgba(255,255,255,.35);
+
+            border-top-color: white;
+
+            border-radius: 50%;
+
+            animation: spin .7s linear infinite;
+        }
+
+
+        .register-btn.loading .spinner {
+
+            display: block;
+        }
+
+
+        @keyframes spin {
+
+            to {
+
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ====================================================== */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin: 24px 0;
+        }
+
+
+        .divider span {
+
+            flex: 1;
+
+            height: 1px;
+
+            background: var(--border);
+        }
+
+
+        .divider p {
+
+            font-family: var(--serif);
+
+            font-size: 11px;
+
+            color: #aaa69f;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           LOGIN TEXT
+        ====================================================== */
+
+        .login-text {
+
+            text-align: center;
+
+            font-size: 13px;
+
+            color: var(--muted);
+        }
+
+
+        .login-text a {
+
+            margin-right: 5px;
+
+            color: var(--emerald);
+
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+
+        .login-text a:hover {
+
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           BACK HOME
+        ====================================================== */
+
+        .back-home {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 22px;
+
+            font-size: 12px;
+
+            color: var(--muted);
+
+            transition: var(--transition);
+        }
+
+
+        .back-home i {
+
+            font-size: 10px;
+
+            transition: var(--transition);
+        }
+
+
+        .back-home:hover {
+
+            color: var(--emerald);
+        }
+
+
+        .back-home:hover i {
+
+            transform: translateX(4px);
+        }
+
+
+        /* =====================================================
+           FORM MESSAGE
+        ====================================================== */
+
+        .form-message {
+
+            display: none;
+
+            padding: 11px 14px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        .form-message.show {
+
+            display: block;
+        }
+
+
+        .form-message.error {
+
+            background: rgba(180,50,50,.07);
+
+            border: 1px solid rgba(180,50,50,.15);
+
+            color: #9d3e3e;
+        }
+
+
+        .form-message.success {
+
+            background: rgba(6,61,57,.07);
+
+            border: 1px solid rgba(6,61,57,.15);
+
+            color: var(--emerald);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .register-wrapper {
+
+                max-width: 520px;
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .brand-side {
+
+                min-height: 310px;
+
+                padding: 35px 35px 30px;
+            }
+
+
+            .brand-content {
+
+                margin-top: 45px;
+            }
+
+
+            .brand-content h1 {
+
+                font-size: 42px;
+            }
+
+
+            .brand-footer {
+
+                display: none;
+            }
+
+
+            .form-side {
+
+                padding: 40px 35px 45px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .register-page {
+
+                padding: 15px;
+            }
+
+
+            .register-wrapper {
+
+                border-radius: 22px;
+            }
+
+
+            .brand-side {
+
+                min-height: 275px;
+
+                padding: 28px 25px;
+            }
+
+
+            .brand-logo-arabic {
+
+                font-size: 48px;
+            }
+
+
+            .brand-content {
+
+                margin-top: 35px;
+            }
+
+
+            .brand-content h1 {
+
+                margin-bottom: 10px;
+
+                font-size: 37px;
+            }
+
+
+            .brand-content p {
+
+                font-size: 13px;
+
+                line-height: 1.8;
+            }
+
+
+            .form-side {
+
+                padding: 35px 25px 40px;
+            }
+
+
+            .form-header {
+
+                margin-bottom: 25px;
+            }
+
+
+            .form-header h2 {
+
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         REGISTER PAGE
+    ====================================================== -->
+
+    <main class="register-page">
+
+
+        <!-- Decorative Elements -->
+
+        <div class="decor-circle one"></div>
+
+        <div class="decor-circle two"></div>
+
+        <div class="decor-line"></div>
+
+
+        <!-- =================================================
+             REGISTER WRAPPER
+        ================================================== -->
+
+        <section class="register-wrapper">
+
+
+            <!-- =================================================
+                 BRAND SIDE
+            ================================================== -->
+
+            <div class="brand-side">
+
+
+                <!-- Logo -->
+
+                <a
+                    href="index.html"
+                    class="brand-logo"
+                    aria-label="عودانا"
+                >
+
+                    <span class="brand-logo-arabic">
+                        عودانا
+                    </span>
+
+                    <span class="brand-logo-english">
+                        OUDANA
+                    </span>
+
+                </a>
+
+
+                <!-- Content -->
+
+                <div class="brand-content">
+
+                    <div class="brand-eyebrow">
+                        JOIN OUDANA
+                    </div>
+
+                    <h1>
+                        ابدأ<br>
+                        رحلتك معنا
+                    </h1>
+
+                    <p>
+                        أنشئ حسابك في عودانا،
+                        وكن جزءًا من عالمٍ صُمم
+                        لعشاق الفخامة والأصالة.
+                    </p>
+
+                </div>
+
+
+                <!-- Footer -->
+
+                <div class="brand-footer">
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                    <span>
+                        أصالة • جودة • فخامة
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FORM SIDE
+            ================================================== -->
+
+            <div class="form-side">
+
+
+                <div class="register-form-wrapper">
+
+
+                    <!-- Header -->
+
+                    <div class="form-header">
+
+                        <span class="mini-title">
+                            OUDANA MEMBERS
+                        </span>
+
+                        <h2>
+                            إنشاء حساب
+                        </h2>
+
+                        <p>
+                            أنشئ حسابك واستمتع بتجربة
+                            تسوق أكثر خصوصية وسهولة.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Form -->
+
+                    <form
+                        class="register-form"
+                        id="registerForm"
+                    >
+
+
+                        <!-- Full Name -->
+
+                        <div class="field">
+
+                            <label for="fullName">
+                                الاسم الكامل
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="أدخل اسمك الكامل"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="field">
+
+                            <label for="email">
+                                البريد الإلكتروني
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Password -->
+
+                        <div class="field">
+
+                            <label for="password">
+                                كلمة المرور
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="أنشئ كلمة مرور قوية"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="passwordToggle"
+                                    aria-label="إظهار كلمة المرور"
+                                >
+
+                                    <i
+                                        class="fa-regular fa-eye"
+                                        id="passwordIcon"
+                                    ></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Confirm Password -->
+
+                        <div class="field">
+
+                            <label for="confirmPassword">
+                                تأكيد كلمة المرور
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="أعد كتابة كلمة المرور"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="confirmPasswordToggle"
+                                    aria-label="إظهار تأكيد كلمة المرور"
+                                >
+
+                                    <i
+                                        class="fa-regular fa-eye"
+                                        id="confirmPasswordIcon"
+                                    ></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Terms -->
+
+                        <label class="terms">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            <span>
+                                أوافق على
+                                <a href="#">
+                                    الشروط والأحكام
+                                </a>
+                                وسياسة الخصوصية الخاصة بعودانا.
+                            </span>
+
+                        </label>
+
+
+                        <!-- Message -->
+
+                        <div
+                            class="form-message"
+                            id="formMessage"
+                        ></div>
+
+
+                        <!-- Button -->
+
+                        <button
+                            type="submit"
+                            class="register-btn"
+                            id="registerBtn"
+                        >
+
+                            <span class="btn-text">
+                                إنشاء الحساب
+                            </span>
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                            <span class="spinner"></span>
+
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+
+                        <span></span>
+
+                        <p>
+                            OUDANA
+                        </p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- Login -->
+
+                    <p class="login-text">
+
+                        لديك حساب بالفعل؟
+
+                        <a href="login.html">
+                            تسجيل الدخول
+                        </a>
+
+                    </p>
+
+
+                    <!-- Back Home -->
+
+                    <a
+                        href="index.html"
+                        class="back-home"
+                    >
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        العودة إلى المتجر
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="settings.js"></script>
+
+    <script>
+
+
+        /* =====================================================
+           PASSWORD SHOW / HIDE
+        ====================================================== */
+
+        const password =
+            document.getElementById("password");
+
+        const passwordToggle =
+            document.getElementById("passwordToggle");
+
+        const passwordIcon =
+            document.getElementById("passwordIcon");
+
+
+        passwordToggle.addEventListener(
+            "click",
+            () => {
+
+                const isPassword =
+                    password.type === "password";
+
+
+                password.type =
+                    isPassword
+                        ? "text"
+                        : "password";
+
+
+                passwordIcon.className =
+                    isPassword
+                        ? "fa-regular fa-eye-slash"
+                        : "fa-regular fa-eye";
+
+
+                passwordToggle.setAttribute(
+                    "aria-label",
+                    isPassword
+                        ? "إخفاء كلمة المرور"
+                        : "إظهار كلمة المرور"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CONFIRM PASSWORD SHOW / HIDE
+        ====================================================== */
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        const confirmPasswordToggle =
+            document.getElementById("confirmPasswordToggle");
+
+        const confirmPasswordIcon =
+            document.getElementById("confirmPasswordIcon");
+
+
+        confirmPasswordToggle.addEventListener(
+            "click",
+            () => {
+
+                const isPassword =
+                    confirmPassword.type === "password";
+
+
+                confirmPassword.type =
+                    isPassword
+                        ? "text"
+                        : "password";
+
+
+                confirmPasswordIcon.className =
+                    isPassword
+                        ? "fa-regular fa-eye-slash"
+                        : "fa-regular fa-eye";
+
+
+                confirmPasswordToggle.setAttribute(
+                    "aria-label",
+                    isPassword
+                        ? "إخفاء كلمة المرور"
+                        : "إظهار كلمة المرور"
+                );
+
+            }
+        );
+
+
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+    "https://gpncttjpcucnbaatwjoy.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_emYCVcv_b9gLa62n3D1pPg_lI5xRnD4";
+
+
+const supabaseClient =
+    supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+/* =====================================================
+   REGISTER FORM
+===================================================== */
+
+const registerForm =
+    document.getElementById("registerForm");
+
+const registerBtn =
+    document.getElementById("registerBtn");
+
+const formMessage =
+    document.getElementById("formMessage");
+
+
+registerForm.addEventListener(
+    "submit",
+    async (event) => {
+
+        event.preventDefault();
+
+
+        formMessage.className =
+            "form-message";
+
+        formMessage.textContent =
+            "";
+
+
+        const fullName =
+            document
+                .getElementById("fullName")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+        const passwordValue =
+            password.value;
+
+
+        const confirmPasswordValue =
+            confirmPassword.value;
+
+
+        /* =================================================
+           VALIDATION
+        ================================================== */
+
+        if (fullName.length < 2) {
+
+            showMessage(
+                "يرجى إدخال الاسم الكامل.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        if (passwordValue.length < 6) {
+
+            showMessage(
+                "كلمة المرور يجب أن تكون 6 أحرف على الأقل.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        if (
+            passwordValue !==
+            confirmPasswordValue
+        ) {
+
+            showMessage(
+                "كلمتا المرور غير متطابقتين.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        registerBtn.classList.add(
+            "loading"
+        );
+
+
+        /* =================================================
+           CREATE ACCOUNT
+        ================================================== */
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.auth.signUp({
+
+                email: email,
+
+                password: passwordValue,
+
+                options: {
+
+                    data: {
+
+                        full_name: fullName
+
+                    }
+
+                }
+
+            });
+
+
+        registerBtn.classList.remove(
+            "loading"
+        );
+
+
+        /* =================================================
+           ERROR
+        ================================================== */
+
+        if (error) {
+
+            console.error(
+                "Register error:",
+                error
+            );
+
+
+            showMessage(
+                getRegisterErrorMessage(error),
+                "error"
+            );
+
+            return;
+        }
+
+
+        /* =================================================
+           SUCCESS
+        ================================================== */
+
+        showMessage(
+            "تم إنشاء حسابك بنجاح. سيتم تحويلك إلى صفحة تسجيل الدخول.",
+            "success"
+        );
+
+
+        setTimeout(
+            () => {
+
+                window.location.href =
+                    "login.html";
+
+            },
+            1200
+        );
+
+    }
+);
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(
+    message,
+    type
+) {
+
+    formMessage.textContent =
+        message;
+
+    formMessage.className =
+        "form-message show " + type;
+}
+
+
+/* =====================================================
+   REGISTER ERRORS
+===================================================== */
+
+function getRegisterErrorMessage(error) {
+
+    const message =
+        error?.message || "";
+
+
+    if (
+        message
+            .toLowerCase()
+            .includes("already registered")
+    ) {
+
+        return "هذا البريد الإلكتروني مسجل مسبقًا.";
+    }
+
+
+    if (
+        message
+            .toLowerCase()
+            .includes("password")
+    ) {
+
+        return "كلمة المرور غير صالحة. تأكدي أنها 6 أحرف على الأقل.";
+    }
+
+
+    if (
+        message
+            .toLowerCase()
+            .includes("email")
+    ) {
+
+        return "البريد الإلكتروني غير صالح.";
+    }
+
+
+    return "حدث خطأ أثناء إنشاء الحساب. حاولي مرة أخرى.";
+}
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
+

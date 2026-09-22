@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>عودانا | المفضلة</title>
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         MAIN SITE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- =====================================================
+         FAVORITES PAGE
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           FAVORITES PAGE — OUDANA EDITORIAL
+        ====================================================== */
+
+        .favorites-page {
+
+            min-height: 100vh;
+
+            background: var(--cream);
+
+            padding-bottom: 130px;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .favorites-hero {
+
+            position: relative;
+
+            min-height: 390px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            overflow: hidden;
+
+            padding:
+                145px 7%
+                65px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--emerald-dark),
+                    var(--emerald)
+                );
+
+            color: white;
+
+        }
+
+
+        /* دائرة زخرفية */
+
+        .favorites-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            left: -190px;
+            top: -300px;
+
+            border:
+                1px solid
+                rgba(201,161,90,.18);
+
+            border-radius: 50%;
+
+        }
+
+
+        .favorites-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            right: -120px;
+            bottom: -240px;
+
+            border:
+                1px solid
+                rgba(201,161,90,.13);
+
+            border-radius: 50%;
+
+        }
+
+
+        .favorites-hero-content {
+
+            position: relative;
+
+            z-index: 3;
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+
+        .favorites-hero-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .favorites-eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        .favorites-eyebrow::before {
+
+            content: "";
+
+            width: 35px;
+
+            height: 1px;
+
+            background: var(--gold);
+
+        }
+
+
+        .favorites-count {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: rgba(255,255,255,.55);
+
+            font-size: 10px;
+
+            letter-spacing: .5px;
+
+        }
+
+
+        .favorites-count strong {
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 16px;
+
+            font-weight: 400;
+
+        }
+
+
+        .favorites-hero h1 {
+
+            margin: 0;
+
+            font-family: var(--arabic-display);
+
+            font-size: clamp(55px, 7vw, 92px);
+
+            font-weight: 400;
+
+            line-height: 1.15;
+
+        }
+
+
+        .favorites-hero h1 span {
+
+            color: var(--gold-light);
+
+        }
+
+
+        .favorites-hero p {
+
+            max-width: 470px;
+
+            margin-top: 18px;
+
+            color: rgba(255,255,255,.58);
+
+            font-size: 13px;
+
+            line-height: 2;
+
+        }
+
+
+        /* =====================================================
+           PRODUCTS AREA
+        ====================================================== */
+
+        .favorites-products {
+
+            width: 88%;
+
+            max-width: 1450px;
+
+            margin: 0 auto;
+
+            padding-top: 85px;
+
+        }
+
+
+        /* =====================================================
+           SECTION HEADER
+        ====================================================== */
+
+        .favorites-section-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 48px;
+
+        }
+
+
+        .favorites-section-title {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+
+        .favorites-section-title small {
+
+            color: var(--gold);
+
+            font-family: var(--serif);
+
+            font-size: 10px;
+
+            letter-spacing: 2.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .favorites-section-title h2 {
+
+            color: var(--emerald-dark);
+
+            font-family: var(--arabic-display);
+
+            font-size: 39px;
+
+            font-weight: 400;
+
+            line-height: 1.3;
+
+        }
+
+
+        .favorites-section-line {
+
+            width: 100%;
+
+            max-width: 320px;
+
+            height: 1px;
+
+            margin-bottom: 9px;
+
+            background:
+                linear-gradient(
+                    to left,
+                    var(--gold),
+                    transparent
+                );
+
+            opacity: .55;
+
+        }
+
+
+        /* =====================================================
+           GRID
+        ====================================================== */
+
+        .favorites-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 52px 32px;
+
+        }
+
+
+        /* =====================================================
+           FAVORITE CARD
+        ====================================================== */
+
+        .favorite-product-card {
+
+            position: relative;
+
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            animation:
+                favoriteReveal .8s var(--transition)
+                forwards;
+
+        }
+
+
+        @keyframes favoriteReveal {
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        /* stagger */
+
+        .favorite-product-card:nth-child(2) {
+
+            animation-delay: .08s;
+
+        }
+
+        .favorite-product-card:nth-child(3) {
+
+            animation-delay: .16s;
+
+        }
+
+        .favorite-product-card:nth-child(4) {
+
+            animation-delay: .24s;
+
+        }
+
+        .favorite-product-card:nth-child(5) {
+
+            animation-delay: .32s;
+
+        }
+
+        .favorite-product-card:nth-child(6) {
+
+            animation-delay: .40s;
+
+        }
+
+
+        /* =====================================================
+           IMAGE
+        ====================================================== */
+
+        .favorite-product-card .product-image {
+
+            aspect-ratio: .82;
+
+            border-radius: 30px;
+
+        }
+
+
+        /* =====================================================
+           HEART
+        ====================================================== */
+
+        .favorite-product-card .wishlist {
+
+            width: 44px;
+
+            height: 44px;
+
+            top: 19px;
+
+            left: 19px;
+
+            background: var(--emerald);
+
+            color: white;
+
+            border:
+                1px solid
+                rgba(255,255,255,.18);
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.12);
+
+        }
+
+
+        .favorite-product-card .wishlist:hover {
+
+            background: var(--gold);
+
+            color: var(--emerald-dark);
+
+            transform:
+                scale(1.08)
+                rotate(-5deg);
+
+        }
+
+
+        /* =====================================================
+           VIEW PRODUCT BUTTON
+        ====================================================== */
+
+        .favorite-view-btn {
+
+            width: 100%;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            border-radius: 16px;
+
+            background: rgba(255,255,255,.94);
+
+            color: var(--emerald);
+
+            font-size: 12px;
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,.1);
+
+            transition:
+                background .3s ease,
+                transform .3s ease;
+
+        }
+
+
+        .favorite-view-btn:hover {
+
+            background: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .favorite-view-btn i {
+
+            color: var(--gold);
+
+            font-size: 10px;
+
+            transition: transform .3s ease;
+
+        }
+
+
+        .favorite-view-btn:hover i {
+
+            transform: translateX(-4px);
+
+        }
+
+
+        /* =====================================================
+           EMPTY STATE
+        ====================================================== */
+
+        .favorites-empty {
+
+            position: relative;
+
+            min-height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 25px;
+
+            overflow: hidden;
+
+            background: var(--emerald-dark);
+
+            border-radius: 32px;
+
+            color: white;
+
+        }
+
+
+        .favorites-empty::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            border:
+                1px solid
+                rgba(201,161,90,.14);
+
+            border-radius: 50%;
+
+            top: -230px;
+
+            right: -150px;
+
+        }
+
+
+        .favorites-empty::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            border:
+                1px solid
+                rgba(201,161,90,.10);
+
+            border-radius: 50%;
+
+            bottom: -170px;
+
+            left: -80px;
+
+        }
+
+
+        .empty-heart {
+
+            position: relative;
+
+            width: 82px;
+
+            height: 82px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 30px;
+
+            border:
+                1px solid
+                rgba(201,161,90,.35);
+
+            border-radius: 50%;
+
+            color: var(--gold-light);
+
+            font-size: 25px;
+
+            z-index: 2;
+
+        }
+
+
+        .empty-heart::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 8px;
+
+            border:
+                1px solid
+                rgba(201,161,90,.12);
+
+            border-radius: 50%;
+
+        }
+
+
+        .favorites-empty h2 {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin: 0;
+
+            color: white;
+
+            font-family: var(--arabic-display);
+
+            font-size: 42px;
+
+            font-weight: 400;
+
+        }
+
+
+        .favorites-empty p {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 410px;
+
+            margin: 13px auto 30px;
+
+            color: rgba(255,255,255,.55);
+
+            font-size: 12px;
+
+            line-height: 2;
+
+        }
+
+
+        .favorites-empty a {
+
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 48px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 13px;
+
+            padding: 0 25px;
+
+            border-radius: 14px;
+
+            background: var(--gold);
+
+            color: var(--emerald-dark);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: .4s var(--transition);
+
+        }
+
+
+        .favorites-empty a:hover {
+
+            background: var(--gold-light);
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .favorites-empty a i {
+
+            transition: transform .3s ease;
+
+        }
+
+
+        .favorites-empty a:hover i {
+
+            transform: translateX(-5px);
+
+        }
+
+
+        /* =====================================================
+           LOADING
+        ====================================================== */
+
+        .favorites-loading {
+
+            min-height: 420px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 17px;
+
+            color: var(--muted);
+
+        }
+
+
+        .favorites-loading i {
+
+            color: var(--gold);
+
+            font-size: 23px;
+
+        }
+
+
+        .favorites-loading p {
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           ERROR
+        ====================================================== */
+
+        .favorites-error {
+
+            min-height: 420px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+        }
+
+
+        .favorites-error i {
+
+            color: var(--gold);
+
+            font-size: 32px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .favorites-error h2 {
+
+            color: var(--emerald);
+
+            font-family: var(--arabic-display);
+
+            font-size: 32px;
+
+            font-weight: 400;
+
+        }
+
+
+        .favorites-error p {
+
+            margin: 10px 0 22px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+        }
+
+
+        .favorites-retry {
+
+            min-height: 45px;
+
+            padding: 0 22px;
+
+            border-radius: 12px;
+
+            background: var(--emerald);
+
+            color: white;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .favorites-hero {
+
+                min-height: 350px;
+
+                padding:
+                    130px 6%
+                    55px;
+
+            }
+
+
+            .favorites-products {
+
+                width: 90%;
+
+                padding-top: 65px;
+
+            }
+
+
+            .favorites-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 38px 18px;
+
+            }
+
+
+            .favorites-section-heading {
+
+                margin-bottom: 35px;
+
+            }
+
+
+            .favorites-section-title h2 {
+
+                font-size: 34px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .favorites-hero {
+
+                min-height: 370px;
+
+                padding:
+                    125px 20px
+                    50px;
+
+            }
+
+
+            .favorites-hero-top {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 13px;
+
+            }
+
+
+            .favorites-eyebrow {
+
+                font-size: 9px;
+
+                letter-spacing: 3px;
+
+            }
+
+
+            .favorites-hero h1 {
+
+                font-size: 55px;
+
+            }
+
+
+            .favorites-hero p {
+
+                font-size: 11px;
+
+                line-height: 1.9;
+
+                max-width: 330px;
+
+            }
+
+
+            .favorites-products {
+
+                width: calc(100% - 36px);
+
+                padding-top: 55px;
+
+            }
+
+
+            .favorites-section-heading {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 18px;
+
+                margin-bottom: 30px;
+
+            }
+
+
+            .favorites-section-title h2 {
+
+                font-size: 32px;
+
+            }
+
+
+            .favorites-section-line {
+
+                max-width: 180px;
+
+                margin: 0;
+
+            }
+
+
+            .favorites-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 34px 12px;
+
+            }
+
+
+            .favorite-product-card .product-image {
+
+                border-radius: 21px;
+
+            }
+
+
+            .favorite-product-card .wishlist {
+
+                width: 32px;
+
+                height: 32px;
+
+                top: 10px;
+
+                left: 10px;
+
+                font-size: 11px;
+
+            }
+
+
+            .favorite-product-card .product-info {
+
+                padding:
+                    15px 2px 5px;
+
+            }
+
+
+            .favorite-product-card .product-category {
+
+                font-size: 8px;
+
+                letter-spacing: 1.2px;
+
+            }
+
+
+            .favorite-product-card .product-info h3 {
+
+                font-size: 12px;
+
+                min-height: 52px;
+
+                line-height: 1.7;
+
+            }
+
+
+            .favorite-product-card .product-bottom {
+
+                margin-top: 10px;
+
+                padding-top: 9px;
+
+            }
+
+
+            .favorite-product-card .price {
+
+                font-size: 13px;
+
+            }
+
+
+            .favorite-product-card .stars {
+
+                font-size: 6px;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            /* على الجوال الزر يظهر تحت الصورة */
+
+            .favorite-product-card .product-overlay {
+
+                position: static !important;
+
+                display: block !important;
+
+                width: 100%;
+
+                padding: 9px 0 0 !important;
+
+                margin: 0;
+
+                transform: none !important;
+
+                opacity: 1 !important;
+
+                visibility: visible !important;
+
+                background: transparent !important;
+
+            }
+
+
+            .favorite-view-btn {
+
+                height: 39px;
+
+                border-radius: 11px;
+
+                font-size: 10px;
+
+                gap: 7px;
+
+            }
+
+
+            .favorites-empty {
+
+                min-height: 460px;
+
+                border-radius: 24px;
+
+                padding:
+                    55px 22px;
+
+            }
+
+
+            .favorites-empty h2 {
+
+                font-size: 35px;
+
+            }
+
+
+            .favorites-empty p {
+
+                font-size: 11px;
+
+                max-width: 280px;
+
+            }
+
+
+            .favorites-empty a {
+
+                min-height: 44px;
+
+                padding: 0 18px;
+
+                font-size: 10px;
+
+                border-radius: 12px;
+
+            }
+
+        }
+
+
+        @media (max-width: 390px) {
+
+            .favorites-grid {
+
+                gap: 30px 10px;
+
+            }
+
+
+            .favorites-products {
+
+                width: calc(100% - 30px);
+
+            }
+
+
+            .favorite-product-card .product-info h3 {
+
+                font-size: 11px;
+
+            }
+
+
+            .favorite-product-card .price {
+
+                font-size: 12px;
+
+            }
+
+        }
+
+        /* =========================================================
+   FAVORITES — SAME PRODUCT CARDS AS HOMEPAGE
+========================================================= */
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 32px;
+}
+
+
+/* زر عرض المنتج */
+
+.favorite-view-btn {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.92);
+
+    color: var(--emerald);
+
+    font-family: inherit;
+    font-size: 12px;
+
+    text-decoration: none;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.10);
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+
+.favorite-view-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+
+.favorite-view-btn i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .favorites-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 34px 12px;
+    }
+
+
+    .favorite-product-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    .favorite-product-card .product-overlay {
+        position: static !important;
+
+        width: 100%;
+
+        display: block !important;
+
+        padding: 10px 0 0 !important;
+        margin: 0 !important;
+
+        transform: none !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        background: transparent !important;
+    }
+
+
+    .favorite-view-btn {
+        height: 46px;
+
+        border-radius: 12px;
+
+        background: var(--emerald);
+
+        color: white;
+
+        box-shadow: none;
+
+        font-size: 11px;
+    }
+
+
+    .favorite-view-btn i {
+        color: var(--gold-light);
+    }
+
+}
+
+/* =========================================================
+   LOGGED IN ACCOUNT ICON
+========================================================= */
+
+#accountBtn.logged-in {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gold, #c9a15a);
+    color: #fff;
+
+    border: 1px solid var(--gold, #c9a15a);
+}
+
+#accountBtn.logged-in i {
+    color: #fff;
+}
+
+.favorite-product-card {
+    cursor: pointer;
+}
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     ANNOUNCEMENT
+===================================================== -->
+
+<div class="announcement">
+
+    <span>
+        شحن مجاني للطلبات فوق 300 ريال
+    </span>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER — SAME AS HOMEPAGE
+===================================================== -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <!-- Right -->
+
+        <div class="header-side right-side">
+
+            <button
+                class="icon-btn search-btn"
+                aria-label="بحث"
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <a
+                href="profile.html"
+                class="icon-btn"
+                id="accountBtn"
+                aria-label="حسابي"
+            >
+
+                <i class="fa-regular fa-user"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- Logo -->
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-arabic">
+                عودانا
+            </span>
+
+            <span class="logo-english">
+                OUDANA
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="menu.html">
+                المتجر
+            </a>
+
+            <a href="favorites.html" class="active">
+                المفضلة
+            </a>
+
+            <a href="profile.html">
+                حسابي
+            </a>
+
+        </nav>
+
+
+        <!-- Left -->
+
+        <div class="header-side left-side">
+
+            <a
+                href="cart.html"
+                class="icon-btn cart-btn"
+                aria-label="السلة"
+            >
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+
+            <button
+                class="menu-btn"
+                aria-label="القائمة"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+    <!-- =====================================================
+         PAGE
+    ====================================================== -->
+
+    <main class="favorites-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="favorites-hero">
+
+            <div class="favorites-hero-content">
+
+                <div class="favorites-hero-top">
+
+                    <span class="favorites-eyebrow">
+                        YOUR PRIVATE EDIT
+                    </span>
+
+
+                    <div class="favorites-count">
+
+                        <strong id="favoritesCount">
+                            0
+                        </strong>
+
+                        <span>
+                            قطعة محفوظة
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h1>
+                    اختياراتك
+                    <span>المفضلة</span>
+                </h1>
+
+
+                <p>
+                    مساحة خاصة تحتفظين فيها بالقطع التي لفتت انتباهك،
+                    لتعودي إليها متى شئتِ.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCTS
+        ================================================== -->
+
+        <section class="favorites-products">
+
+
+            <div class="favorites-section-heading">
+
+                <div class="favorites-section-title">
+
+                    <small>
+                        CURATED FOR YOU
+                    </small>
+
+                    <h2>
+                        قطع اخترتها بعناية
+                    </h2>
+
+                </div>
+
+
+                <div class="favorites-section-line"></div>
+
+            </div>
+
+
+            <div id="favoritesContent">
+
+                <div class="favorites-loading">
+
+                    <i class="fa-solid fa-circle-notch fa-spin"></i>
+
+                    <p>
+                        جاري تحميل المفضلة...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+     <script src="settings.js"></script>
+    <script src="auth.js"></script>
+
+    <script src="favorites.js"></script>
+
+    <script>
+         /* =====================================================
+       HEADER SCROLL
+    ===================================================== */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 80) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+    </script>
+
+
+</body>
+
+</html>

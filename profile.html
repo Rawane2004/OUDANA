@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>عودانا | حسابي</title>
+
+    <meta
+        name="description"
+        content="حسابك في عودانا — الطلبات، العناوين، الشكاوى والبيانات الشخصية."
+    >
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         PROFILE CSS
+    ====================================================== -->
+
+   <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="profile.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ANNOUNCEMENT BAR
+===================================================== -->
+
+<div class="announcement">
+
+    <span>
+        <i class="fa-solid fa-truck-fast"></i>
+        شحن مجاني للطلبات فوق 300 ريال
+    </span>
+
+</div>
+
+
+<!-- =====================================================
+     OUDANA HEADER
+===================================================== -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <!-- Right -->
+
+        <div class="header-side right-side">
+
+            <button
+                class="icon-btn search-btn"
+                aria-label="بحث">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <a
+                href="login.html"
+                class="icon-btn"
+                id="accountBtn"
+                aria-label="حسابي">
+
+                <i class="fa-regular fa-user"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- Logo -->
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-arabic">
+                عودانا
+            </span>
+
+            <span class="logo-english">
+                OUDANA
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="menu.html">
+                المتجر
+            </a>
+
+            <a href="index.html#collections">
+                المجموعات
+            </a>
+
+            <a href="index.html#story">
+                قصتنا
+            </a>
+
+            <a href="index.html#contact">
+                تواصل معنا
+            </a>
+
+        </nav>
+
+
+        <!-- Left -->
+
+        <div class="header-side left-side">
+
+            <button
+                class="icon-btn cart-btn"
+                aria-label="السلة">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span class="cart-count">0</span>
+
+            </button>
+
+
+            <button
+                class="menu-btn"
+                aria-label="القائمة">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu">
+
+    <button class="mobile-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="mobile-menu-logo">
+
+        عودانا
+
+        <small>
+            OUDANA
+        </small>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            الرئيسية
+        </a>
+
+        <a href="menu.html">
+            المنتجات
+        </a>
+
+        <a href="index.html#collections">
+            المجموعات
+        </a>
+
+        <a href="index.html#story">
+            قصتنا
+        </a>
+
+        <a href="index.html#contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+</div>
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="profile-page">
+
+
+    <!-- =================================================
+         PROFILE HERO
+    ================================================== -->
+
+    <section class="profile-hero">
+
+
+        <div class="profile-hero-content">
+
+            <span class="profile-eyebrow">
+                MY ACCOUNT · حسابي
+            </span>
+
+            <h1>
+                أهلاً بكِ
+            </h1>
+
+            <p>
+                كل تفاصيل تجربتك مع عودانا في مكان واحد.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             USER CARD
+        ================================================== -->
+
+        <div class="profile-user-card">
+
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                —
+            </div>
+
+
+            <div class="profile-user-info">
+
+                <strong id="profileUserName">
+                    جاري التحميل...
+                </strong>
+
+                <span id="profileUserEmail">
+                    ...
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MAIN LAYOUT
+    ================================================== -->
+
+    <div class="profile-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="profile-sidebar">
+
+
+            <!-- OVERVIEW -->
+
+            <button
+                type="button"
+                class="profile-nav-item active"
+                data-section="overview"
+            >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+                <span>
+                    نظرة عامة
+                </span>
+
+                <b>
+                    01
+                </b>
+
+            </button>
+
+
+            <!-- ORDERS -->
+
+            <button
+                type="button"
+                class="profile-nav-item"
+                data-section="orders"
+            >
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>
+                    طلباتي
+                </span>
+
+                <b id="ordersCount">
+                    0
+                </b>
+
+            </button>
+
+
+            <!-- PERSONAL DATA -->
+
+            <button
+                type="button"
+                class="profile-nav-item"
+                data-section="personal"
+            >
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>
+                    بياناتي
+                </span>
+
+                <b>
+                    03
+                </b>
+
+            </button>
+
+
+            <!-- ADDRESSES -->
+
+            <button
+                type="button"
+                class="profile-nav-item"
+                data-section="addresses"
+            >
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    عناويني
+                </span>
+
+                <b id="addressesCount">
+                    0
+                </b>
+
+            </button>
+
+
+            <!-- COMPLAINTS -->
+
+            <button
+                type="button"
+                class="profile-nav-item"
+                data-section="complaints"
+            >
+
+                <i class="fa-regular fa-comment-dots"></i>
+
+                <span>
+                    الشكاوى والاستفسارات
+                </span>
+
+                <b id="complaintsCount">
+                    0
+                </b>
+
+            </button>
+
+
+            <!-- SECURITY -->
+
+            <button
+                type="button"
+                class="profile-nav-item"
+                data-section="security"
+            >
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    الأمان
+                </span>
+
+                <b>
+                    06
+                </b>
+
+            </button>
+
+
+            <div class="profile-sidebar-divider"></div>
+
+
+            <!-- SHOP -->
+
+            <a
+                href="menu.html"
+                class="profile-sidebar-shop"
+            >
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span>
+                    العودة للمتجر
+                </span>
+
+            </a>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                type="button"
+                class="profile-logout"
+                id="profileLogoutBtn"
+            >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>
+                    تسجيل الخروج
+                </span>
+
+            </button>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="profile-content">
+
+
+            <!-- =================================================
+                 OVERVIEW
+            ================================================== -->
+
+            <section
+                class="profile-section active"
+                id="section-overview"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            OVERVIEW
+                        </span>
+
+                        <h2>
+                            نظرة عامة
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATS -->
+
+                <div class="profile-stats">
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-box"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                إجمالي الطلبات
+                            </span>
+
+                            <strong id="overviewOrdersCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                العناوين
+                            </span>
+
+                            <strong id="overviewAddressesCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-regular fa-comment-dots"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                الشكاوى
+                            </span>
+
+                            <strong id="overviewComplaintsCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="profile-stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-heart"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                المفضلة
+                            </span>
+
+                            <strong id="overviewFavoritesCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                
+
+
+
+                <!-- RECENT ORDERS -->
+
+                <div class="profile-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span>
+                                RECENT ORDERS
+                            </span>
+
+                            <h3>
+                                آخر الطلبات
+                            </h3>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="text-btn"
+                            data-go-section="orders"
+                        >
+                            عرض الكل
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="orders-list"
+                        id="latestOrderLoading"
+                    >
+
+                        <div class="profile-loading">
+
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+
+                            جاري تحميل الطلبات...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ORDERS
+            ================================================== -->
+
+            <section
+                class="profile-section"
+                id="section-orders"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            MY ORDERS
+                        </span>
+
+                        <h2>
+                            طلباتي
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-panel">
+
+                    <div
+                        class="orders-list"
+                        id="ordersList"
+                    >
+
+                        <div class="profile-loading">
+
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+
+                            جاري تحميل الطلبات...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PERSONAL DATA
+            ================================================== -->
+
+            <section
+                class="profile-section"
+                id="section-personal"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            PERSONAL INFORMATION
+                        </span>
+
+                        <h2>
+                            بياناتي
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span>
+                                YOUR INFORMATION
+                            </span>
+
+                            <h3>
+                                المعلومات الشخصية
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="personalDataForm">
+
+                        <div class="form-grid">
+
+
+                            <div class="profile-field">
+
+                                <label for="profileName">
+                                    الاسم
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="profileName"
+                                    placeholder="الاسم"
+                                    autocomplete="name"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="profileEmail">
+                                    البريد الإلكتروني
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="profileEmail"
+                                    disabled
+                                >
+
+                                <small>
+                                    لا يمكن تعديل البريد المرتبط بالحساب من هنا.
+                                </small>
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="profilePhone">
+                                    رقم الجوال
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="profilePhone"
+                                    placeholder="05xxxxxxxx"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="profileCity">
+                                    المدينة
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="profileCity"
+                                    placeholder="المدينة"
+                                    autocomplete="address-level2"
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="gold-btn"
+                            >
+
+                                <i class="fa-solid fa-check"></i>
+
+                                حفظ التغييرات
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="form-message"
+                            id="personalFormMessage"
+                        ></div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ADDRESSES
+            ================================================== -->
+
+            <section
+                class="profile-section"
+                id="section-addresses"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            MY ADDRESSES
+                        </span>
+
+                        <h2>
+                            عناويني
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="gold-outline-btn"
+                        id="newAddressBtn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        إضافة عنوان
+
+                    </button>
+
+                </div>
+
+
+                <!-- ADDRESS LIST -->
+
+                <div
+                    class="addresses-grid"
+                    id="addressesList"
+                >
+
+                    <div class="profile-loading">
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        جاري تحميل العناوين...
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDRESS FORM -->
+
+                <div
+                    class="profile-panel address-form-panel"
+                    id="addressFormPanel"
+                >
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span>
+                                NEW ADDRESS
+                            </span>
+
+                            <h3>
+                                إضافة عنوان جديد
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="addressForm">
+                        <input type="hidden" id="editingAddressId">
+
+<label class="profile-field">
+    <span>العنوان الافتراضي</span>
+
+    <input
+        type="checkbox"
+        id="addressDefault"
+    >
+</label>
+
+                        <div class="form-grid">
+
+
+                            <div class="profile-field">
+
+                                <label for="addressTitle">
+                                    اسم العنوان
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressTitle"
+                                    placeholder="المنزل، العمل..."
+                                    value="العنوان الرئيسي"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressRecipient">
+                                    اسم المستلم
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressRecipient"
+                                    placeholder="اسم المستلم"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressPhone">
+                                    رقم الجوال
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="addressPhone"
+                                    placeholder="05xxxxxxxx"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressCity">
+                                    المدينة
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressCity"
+                                    placeholder="المدينة"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressDistrict">
+                                    الحي
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressDistrict"
+                                    placeholder="اسم الحي"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressStreet">
+                                    الشارع
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressStreet"
+                                    placeholder="اسم الشارع"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressBuilding">
+                                    رقم المبنى
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressBuilding"
+                                    placeholder="رقم المبنى"
+                                >
+
+                            </div>
+
+
+
+                            <div class="profile-field">
+
+                                <label for="addressPostal">
+                                    الرمز البريدي
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="addressPostal"
+                                    placeholder="الرمز البريدي"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="address-form-actions">
+
+                            <button
+                                type="submit"
+                                class="gold-btn"
+                            >
+
+                                <i class="fa-solid fa-check"></i>
+
+                                حفظ العنوان
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="cancel-btn"
+                                id="cancelAddressBtn"
+                            >
+
+                                إلغاء
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="form-message"
+                            id="addressFormMessage"
+                        ></div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COMPLAINTS
+            ================================================== -->
+
+            <section
+                class="profile-section"
+                id="section-complaints"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            CUSTOMER CARE
+                        </span>
+
+                        <h2>
+                            الشكاوى والاستفسارات
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="gold-outline-btn"
+                        id="newComplaintBtn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        شكوى أو استفسار جديد
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COMPLAINT FORM
+                ================================================== -->
+
+                <div
+                    class="profile-panel complaint-form-panel"
+                    id="complaintFormPanel"
+                >
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span>
+                                CONTACT OUDANA
+                            </span>
+
+                            <h3>
+                                أرسلي لنا رسالتك
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="complaintForm">
+
+
+                        <div class="form-grid">
+
+
+                            <!-- TYPE -->
+
+                            <div class="profile-field">
+
+                                <label for="complaintType">
+                                    نوع الطلب
+                                </label>
+
+                                <select id="complaintType">
+
+                                    <option value="complaint">
+                                        شكوى
+                                    </option>
+
+                                    <option value="inquiry">
+                                        استفسار
+                                    </option>
+
+                                    <option value="order">
+                                        مشكلة في طلب
+                                    </option>
+
+                                    <option value="return">
+                                        استبدال أو استرجاع
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- ORDER -->
+
+                            <div class="profile-field">
+
+                                <label for="complaintOrderId">
+
+                                    الطلب المرتبط
+
+                                    <span>
+                                        اختياري
+                                    </span>
+
+                                </label>
+
+                                <select id="complaintOrderId">
+
+                                    <option value="">
+                                        لا يوجد طلب محدد
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- SUBJECT -->
+
+                            <div class="profile-field full">
+
+                                <label for="complaintSubject">
+                                    عنوان الرسالة
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="complaintSubject"
+                                    placeholder="مثال: لدي مشكلة في طلبي"
+                                    maxlength="150"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- MESSAGE -->
+
+                            <div
+                                class="profile-field full"
+                                id="complaintMessageBox"
+                            >
+
+                                <label for="complaintMessage">
+                                    الرسالة
+                                </label>
+
+                                <textarea
+                                    id="complaintMessage"
+                                    placeholder="اكتبي تفاصيل الشكوى أو الاستفسار هنا..."
+                                    maxlength="2000"
+                                    required
+                                ></textarea>
+
+                                <small>
+                                    يمكنك كتابة تفاصيل المشكلة أو الاستفسار بشكل واضح.
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="gold-btn"
+                                id="saveComplaintBtn"
+                            >
+
+                                <i class="fa-solid fa-paper-plane"></i>
+
+                                إرسال الرسالة
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="cancel-btn"
+                                id="cancelComplaintBtn"
+                            >
+
+                                إلغاء
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="form-message"
+                            id="complaintFormMessage"
+                        ></div>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COMPLAINTS LIST
+                ================================================== -->
+
+                <div class="profile-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span>
+                                YOUR REQUESTS
+                            </span>
+
+                            <h3>
+                                رسائلك السابقة
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="complaints-list"
+                        id="complaintsList"
+                    >
+
+                        <div class="profile-loading">
+
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+
+                            جاري تحميل الشكاوى...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SECURITY
+            ================================================== -->
+
+            <section
+                class="profile-section"
+                id="section-security"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            ACCOUNT SECURITY
+                        </span>
+
+                        <h2>
+                            الأمان
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-panel">
+
+
+                    <div class="security-intro">
+
+                        <div class="security-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                حسابك محمي
+                            </strong>
+
+                            <p>
+                                يتم استخدام Supabase Authentication لحماية تسجيل الدخول إلى حسابك.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <div class="profile-field">
+
+                            <label>
+                                البريد المرتبط بالحساب
+                            </label>
+
+                            <input
+                                type="email"
+                                id="securityEmail"
+                                disabled
+                            >
+
+                        </div>
+
+
+
+                        <div class="profile-field">
+
+                            <label>
+                                حالة الحساب
+                            </label>
+
+                            <input
+                                type="text"
+                                value="الحساب نشط"
+                                disabled
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+</main>
+
+
+<!-- =====================================================
+     REVIEW MODAL
+===================================================== -->
+
+<div
+    class="review-modal"
+    id="reviewModal"
+    hidden
+>
+
+    <div class="review-modal-overlay" id="reviewModalOverlay"></div>
+
+    <div
+        class="review-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="reviewModalTitle"
+    >
+
+        <!-- إغلاق -->
+
+        <button
+            type="button"
+            class="review-modal-close"
+            id="reviewModalClose"
+            aria-label="إغلاق"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <!-- العنوان -->
+
+        <div class="review-modal-header">
+
+            <span class="review-eyebrow">
+                OUDANA EXPERIENCE
+            </span>
+
+            <h2 id="reviewModalTitle">
+                قيّمي تجربتك
+            </h2>
+
+            <p>
+                شاركينا رأيك في هذا المنتج
+            </p>
+
+        </div>
+
+
+        <!-- اسم المنتج -->
+
+        <div class="review-product-name" id="reviewProductName">
+            المنتج
+        </div>
+
+
+        <!-- النجوم -->
+
+        <div
+            class="review-stars"
+            id="reviewStars"
+            dir="ltr"
+        >
+
+            <button
+                type="button"
+                class="review-star"
+                data-rating="1"
+                aria-label="تقييم نجمة واحدة"
+            >
+                <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button
+                type="button"
+                class="review-star"
+                data-rating="2"
+                aria-label="تقييم نجمتين"
+            >
+                <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button
+                type="button"
+                class="review-star"
+                data-rating="3"
+                aria-label="تقييم ثلاث نجوم"
+            >
+                <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button
+                type="button"
+                class="review-star"
+                data-rating="4"
+                aria-label="تقييم أربع نجوم"
+            >
+                <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button
+                type="button"
+                class="review-star"
+                data-rating="5"
+                aria-label="تقييم خمس نجوم"
+            >
+                <i class="fa-regular fa-star"></i>
+            </button>
+
+        </div>
+
+
+        <!-- النص -->
+
+        <div class="review-rating-text" id="reviewRatingText">
+            اختاري تقييمك
+        </div>
+
+
+        <!-- التعليق -->
+
+        <div class="review-field">
+
+            <label for="reviewComment">
+                تعليقك
+                <span>اختياري</span>
+            </label>
+
+            <textarea
+                id="reviewComment"
+                maxlength="1000"
+                placeholder="اكتبي لنا رأيك عن المنتج..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- الرسالة -->
+
+        <div
+            class="review-message"
+            id="reviewMessage"
+        ></div>
+
+
+        <!-- الأزرار -->
+
+        <div class="review-actions">
+
+            <button
+                type="button"
+                class="cancel-btn"
+                id="reviewCancelBtn"
+            >
+                إلغاء
+            </button>
+
+            <button
+                type="button"
+                class="gold-btn"
+                id="submitReviewBtn"
+            >
+
+                <i class="fa-solid fa-star"></i>
+
+                إرسال التقييم
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SHARED CART
+===================================================== -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay">
+</div>
+
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer">
+
+    <div class="cart-header">
+
+        <h2>
+            سلة مشترياتك
+        </h2>
+
+
+        <button
+            class="cart-close"
+            id="cartClose"
+            aria-label="إغلاق">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-content"
+        id="cartContent">
+
+        <!-- cart.js -->
+
+    </div>
+
+</aside>
+<!-- =====================================================
+     SUPABASE
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="auth.js"></script>
+
+<script src="cart.js"></script>
+
+<script src="profile.js"></script>
+
+
+</body>
+</html>
