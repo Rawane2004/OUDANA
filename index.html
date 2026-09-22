@@ -912,28 +912,79 @@
 
     });
 
+/* =====================================================
+   SEARCH
+   فتح البحث + البحث الفعلي
+===================================================== */
 
-    /* =====================================================
-       SEARCH
-    ===================================================== */
+const searchBtn = document.querySelector(".search-btn");
+const searchOverlay = document.querySelector(".search-overlay");
+const searchClose = document.querySelector(".search-close");
+const searchInput = searchOverlay?.querySelector("input");
 
-    const searchBtn = document.querySelector(".search-btn");
-    const searchOverlay = document.querySelector(".search-overlay");
-    const searchClose = document.querySelector(".search-close");
+
+/* فتح البحث */
+
+if (searchBtn && searchOverlay) {
 
     searchBtn.addEventListener("click", () => {
+
         searchOverlay.classList.add("open");
+
         document.body.classList.add("no-scroll");
 
         setTimeout(() => {
-            searchOverlay.querySelector("input").focus();
+
+            if (searchInput) {
+                searchInput.focus();
+            }
+
         }, 300);
+
     });
 
+}
+
+
+/* إغلاق البحث */
+
+if (searchClose && searchOverlay) {
+
     searchClose.addEventListener("click", () => {
+
         searchOverlay.classList.remove("open");
+
         document.body.classList.remove("no-scroll");
+
     });
+
+}
+
+
+/* البحث عند الضغط على Enter */
+
+if (searchInput) {
+
+    searchInput.addEventListener("keydown", (event) => {
+
+        if (event.key !== "Enter") return;
+
+        const searchValue =
+            searchInput.value.trim();
+
+        if (!searchValue) return;
+
+        /*
+            نرسل كلمة البحث إلى صفحة المتجر
+        */
+
+        window.location.href =
+            `menu.html?search=${encodeURIComponent(searchValue)}`;
+
+    });
+
+}
+
 
 
     
